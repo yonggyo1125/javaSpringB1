@@ -7,7 +7,7 @@
                 <dt>구분</dt>
                 <dd>
                     <label>
-                        <input type="radio" name="type" value="private">개인회원
+                        <input type="radio" name="type" value="private" checked>개인회원
                     </label>
                     <label>
                         <input type="radio" name="type" value="business">사업자회원
@@ -55,6 +55,42 @@
                 <dt>자기소개</dt>
                 <dd>
                     <textarea name="introduction" rows="10" cols="100">1234</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>연령</dt>
+                <dd>
+                    <input type="number" name="age">
+                </dd>
+            </dl>
+            <dl>
+                <dt>생년월일</dt>
+                <dd>
+                    <input type="date" name="birthDt">
+                </dd>
+            </dl>
+            <dl>
+                <dt>이메일</dt>
+                <dd>
+                    <input type="text" name="email">@
+                    <select name="domain">
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="" selected>직접입력</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>점수</dt>
+                <dd>
+                    <input type="range" name="score" min="0" max="100">
+                </dd>
+            </dl>
+            <dl>
+                <dt>프로필사진</dt>
+                <dd>
+                    <input type="file" name="profile">
                 </dd>
             </dl>
             <!--
