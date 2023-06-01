@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <style>
+            .box { transition: all 1s; width: 100px; height: 100px; background: orange; }
+            .box:hover { width: 200px; height: 200px; background: blue; }
+            #check:checked { display: none; }
+            #text:read-only { background: gray; }
+            #text2:focus { background: yellow; }
+            
+        </style>
+        <div class="box"></div>
+
+        <input type="checkbox" id="check">
+        <br>
+        <br>
+        <input type="text" id="text" readonly>
+        <br>
+        <input type="text" id="text2">
+    </body>
+</html>

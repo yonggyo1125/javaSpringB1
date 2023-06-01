@@ -6,7 +6,8 @@
             ul li { color: red; }
             ol li { color: blue;}
             ol li ul li { color: green; }
-            ol > li > ul > li > span { background: orange; }
+            /* ol > li > ul > li > span { background: orange; } */
+            .submenu > li > span { background: orange; }
         </style>
         <ul>
             <li>메뉴1</li>
@@ -20,10 +21,11 @@
             <li>메뉴1</li>
             <li>
                 메뉴2
-                <ul>
+                <ul class="submenu">
                     <li>서브메뉴1</li>
-                    <li>
+                    <li>  
                         <span>서브메뉴2</span>
+                      
                         <ul>
                             <li><span>서브서브메뉴1</span></li>
                             <li>서브서브메뉴2</li>
