@@ -6,8 +6,12 @@
             <dl>
                 <dt>구분</dt>
                 <dd>
-                    <input type="radio" name="type" value="private">개인회원
-                    <input type="radio" name="type" value="business">사업자회원
+                    <label>
+                        <input type="radio" name="type" value="private">개인회원
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="business">사업자회원
+                    </label>
                 </dd>
             </dl>
             <dl>
@@ -37,9 +41,14 @@
             <dl>
                 <dt>취미</dt>
                 <dd>
-                    <input type="checkbox" name="hobby" value="독서">독서
-                    <input type="checkbox" name="hobby" value="조깅">조깅
-                    <input type="checkbox" name="hobby" value="피아노">피아노
+                    <input type="checkbox" name="hobby" value="독서" id="hobby1">
+                    <label for="hobby1">독서</label>
+
+                    <input type="checkbox" name="hobby" value="조깅" id="hobby2">
+                    <label for="hobby2">조깅</label>
+                    
+                    <input type="checkbox" name="hobby" value="피아노" id="hobby3">
+                    <label for="hobby3">피아노</label>
                 </dd>
             </dl>
             <dl>
@@ -48,8 +57,12 @@
                     <textarea name="introduction" rows="10" cols="100">1234</textarea>
                 </dd>
             </dl>
+            <!--
             <input type="submit" value="가입하기">
             <input type="reset" value="다시입력">
+            -->
+            <button type="submit">가입하기</button>
+            <button type="reset">다시입력</button>
         </form>
     </body>
 </html>
