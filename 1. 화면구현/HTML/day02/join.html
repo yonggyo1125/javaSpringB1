@@ -4,29 +4,45 @@
     <body>
         <form>
             <dl>
+                <dt>구분</dt>
+                <dd>
+                    <input type="radio" name="type" value="private">개인회원
+                    <input type="radio" name="type" value="business">사업자회원
+                </dd>
+            </dl>
+            <dl>
                 <dt>아이디</dt>
                 <dd>
-                    <input type="text">
+                    <input type="text" name="userId">
                 </dd>
             </dl>
             <dl>
                 <dt>비밀번호</dt>
                 <dd>
-                    <input type="text">
+                    <input type="password" name="userPw">
                 </dd>
             </dl>
             <dl>
                 <dt>비밀번호 확인</dt>
                 <dd>
-                    <input type="text">
+                    <input type="password" name="userPwRe">
                 </dd>
             </dl>
             <dl>
                 <dt>이름</dt>
                 <dd>
-                    <input type="text">
+                    <input type="text" name="userNm">
                 </dd>
             </dl>
+            <dl>
+                <dt>취미</dt>
+                <dd>
+                    <input type="checkbox" name="hobby" value="독서">독서
+                    <input type="checkbox" name="hobby" value="조깅">조깅
+                    <input type="checkbox" name="hobby" value="피아노">피아노
+                </dd>
+            </dl>
+            <input type="submit">
         </form>
     </body>
 </html>
