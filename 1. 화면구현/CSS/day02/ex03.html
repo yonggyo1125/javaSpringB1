@@ -3,9 +3,13 @@
     <head></head>
     <body>
         <style>
+         
             input[type="radio"] { display: none; }
+           
             input[type="radio"]+label { background:url("radio-off.png") no-repeat left center; padding: 10px 0 10px 30px; }
+      
             input[type="radio"]:checked+label { background:url("radio-on.png") no-repeat left center; }
+            
         </style>
         <input type="radio" name="type" value="private" id="type_private">
         <label for="type_private">개인회원</label>
