@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <style>
+            ul { list-style: none; margin: 0; padding: 0; }
+            li { margin: 0; padding: 0; }
+
+            /*ul { display: flex; justify-content: center; /* justify-content: flex-end; } */
+            li:first-of-type { background: orange; }
+            li:nth-of-type(2) { background: blue; }
+            li:last-of-type { background: green; }
+            ul.flex1 { display: flex; justify-content: space-between; }
+
+            ul.flex2 { display: flex; justify-content: space-around; }
+
+            ul.flex3 { display: flex; justify-content: space-evenly; }
+        </style>
+        <h1>space-between</h1>
+        <ul class="flex1">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+
+        <h1>space-around</h1>
+        <ul class="flex2">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+
+        <h1>space-evenly</h1>
+        <ul class="flex3">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+    </body>
+</html>
