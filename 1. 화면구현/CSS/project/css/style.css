@@ -24,4 +24,28 @@ nav { display: flex; height: 44px; }
 nav > a { flex-grow: 1; width: 0; text-align: center; color: #494949; line-height: 44px; }
 
 /* 메인 배너 */
-main .main_bg img { width: 100%; }
+main .main_bg img { width: 100%; display: block; }
+
+/* 메인 가운데 메뉴 S */
+main .mid_menus { display: flex; flex-wrap: wrap; border: 10px solid #ededed; border-left: 0; border-right: 0;}
+main .mid_menus a { width: calc(100% / 3); text-align: center; height: 50px; line-height: 50px; font-weight: 500; font-size: 1.08rem; border-top: 1px solid #ededed; border-left: 1px solid #ededed; }
+
+main .mid_menus a:nth-of-type(3n+1) { border-left: 0; }
+main .mid_menus a:nth-of-type(1),
+main .mid_menus a:nth-of-type(2),
+main .mid_menus a:nth-of-type(3) { border-top: 0; }
+
+/* 메인 가운데 메뉴 E */
+
+/* 서브 배너 S */
+main .sub_bg { display: flex; flex-wrap: wrap; margin-bottom: 20px; }
+main .sub_bg a:nth-of-type(1) { width: 100%; }
+main .sub_bg a:nth-of-type(2),
+main .sub_bg a:nth-of-type(3) { width: 50%; }
+main .sub_bg img { width: 100%; display: block; }
+/* 서브 배너 E */
+
+/* 상품 목록 S */
+.products h3 { padding: 20px; line-height: 1; text-align: center; font-size: 1.538rem; }
+
+/* 상품 목록 E */
