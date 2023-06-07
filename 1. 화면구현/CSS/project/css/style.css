@@ -18,3 +18,10 @@ header > section.left a { margin-right: 5px; }
 header > section.right a { margin-left: 5px; }
 
 /* 상단 헤더 영역 E */
+
+/* 상단 메뉴 영역 */
+nav { display: flex; height: 44px; }
+nav > a { flex-grow: 1; width: 0; text-align: center; color: #494949; line-height: 44px; }
+
+/* 메인 배너 */
+main .main_bg img { width: 100%; }
