@@ -9,3 +9,12 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
 dl, dt, dd { padding: 0; margin: 0; }
 a { text-decoration: none; }
 img { border: 0; }
+
+/* 상단 헤더 영역 S */
+header { display: flex; align-items: center; justify-content: space-between; height: 66px; border-bottom: 1px solid #e6e6e6; padding: 0 15px; }
+header .logo img { height: 34px; }
+header > section i { font-size: 1.85rem; }
+header > section.left a { margin-right: 5px; }
+header > section.right a { margin-left: 5px; }
+
+/* 상단 헤더 영역 E */
