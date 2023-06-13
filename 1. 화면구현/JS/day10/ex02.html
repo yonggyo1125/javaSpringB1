@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            window.addEventListener("DOMContentLoaded", function() {
+                const button = document.getElementById("button");
+                const button2 = document.getElementById("button2");
+                button.addEventListener("click", function() {
+                    const w = open("ex03.html", "win", "width=300,height=400");
+                    
+                    button2.addEventListener("click", function() {
+                        w.close();
+                    });
+                });
+            });
+        </script>
+        <button type="button" id="button">클릭!</button>
+        <button type="button" id="button2">닫기!</button>
+    </body>
+</html>
