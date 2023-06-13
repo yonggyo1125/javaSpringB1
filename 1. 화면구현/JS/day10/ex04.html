@@ -16,19 +16,19 @@
                     const w = open("ex03.html", "win", "width=500,height=500");
                     
                     _moveTo.addEventListener("click", function() {
-                        moveTo(300, 300);
+                        w.moveTo(300, 300);
                     });
 
                     _moveBy.addEventListener("click", function() {
-                        moveBy(30, 30);
+                        w.moveBy(30, 30);
                     });
                     
                     _resizeTo.addEventListener("click", function() {
-                        resizeTo(200, 200);
+                        w.resizeTo(200, 200);
                     });
 
                     _resizeBy.addEventListener("click", function() {
-                        resizeBy(30, 30);
+                        w.resizeBy(30, 30);
                     });
                 });
             });

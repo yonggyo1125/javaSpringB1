@@ -1,0 +1,12 @@
+* { box-sizing: border-box; color: #212121; outline: none; }
+
+html { font-size: 13px; } /* 1rem - 13px */
+
+/* 공통 초기화 */
+body { margin: 0; }
+ul, ol { list-style: none; padding: 0; }
+dl, dt, dd { margin: 0; padding: 0; }
+a { text-decoration: none; }
+img { border: 0; }
+
+
