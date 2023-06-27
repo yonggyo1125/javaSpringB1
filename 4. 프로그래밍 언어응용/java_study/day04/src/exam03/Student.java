@@ -11,6 +11,16 @@ public class Student {
         this.subject = subject;
     }
 
+    public static void staticMethod() {
+        System.out.println("정적 메서드!!");
+
+    }
+
+    public void instanceMethod() {
+        id = 1000;
+        staticMethod();
+    }
+
     @Override
     public String toString() {
         return "Student{" +
