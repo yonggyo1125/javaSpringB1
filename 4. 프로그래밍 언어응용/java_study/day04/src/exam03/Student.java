@@ -13,7 +13,6 @@ public class Student {
 
     public static void staticMethod() {
         System.out.println("정적 메서드!!");
-
     }
 
     public void instanceMethod() {
