@@ -1,5 +1,7 @@
 package exam01;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private String author;
@@ -45,9 +47,20 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object obj) {
-
+    public boolean equals(Object obj) { // Object obj = book2
+        if (obj instanceof Book) {
+            Book book = (Book) obj;
+            if (title.equals(book.title) && author.equals(book.author)
+                    && publisher.equals(book.publisher)) {
+                return true;
+            }
+        }
 
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, publisher);
     }
 }
