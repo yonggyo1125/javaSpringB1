@@ -4,11 +4,21 @@ public enum Transportation { // class Transportation extends java.lang.Enum { ..
     BUS("버스", 1450) {
         @Override
         public int getTotalFare(int personNum) {
-            return
+            return basicFare * personNum;
         }
     },
-    TAXI("택시", 4000),
-    SUBWAY("지하철", 1450);
+    TAXI("택시", 4000) {
+        @Override
+        public int getTotalFare(int personNum) {
+            return basicFare * personNum;
+        }
+    },
+    SUBWAY("지하철", 1450) {
+        @Override
+        public int getTotalFare(int personNum) {
+            return basicFare * personNum;
+        }
+    };
 
     protected int basicFare;
 
