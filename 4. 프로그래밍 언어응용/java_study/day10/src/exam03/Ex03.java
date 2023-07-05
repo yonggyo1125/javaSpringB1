@@ -3,6 +3,7 @@ package exam03;
 public class Ex03 {
     public static void main(String[] args) {
         Transportation trans = Transportation.SUBWAY;
+
         String str = trans.name(); // trans.toString();
         System.out.println(str);
 
