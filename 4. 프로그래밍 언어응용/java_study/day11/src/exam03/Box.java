@@ -1,6 +1,6 @@
 package exam03;
 
-public class Box<T extends Fruit> { // Apple, Fruit
+public class Box<T extends Fruit & Eatable> { // Apple, Fruit
     private T item;
 
     //private T[] nums = new T[3];
