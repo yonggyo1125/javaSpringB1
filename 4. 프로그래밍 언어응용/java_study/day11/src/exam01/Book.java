@@ -1,11 +1,13 @@
 package exam01;
 
-@MyAnno("이름1")
+//@MyAnno({"값1", "값2", "값3"})
+@MyAnno
 public class Book {
 
     private String title;
     private String author;
 
+   // @MyAnno
     public String getTitle() {
         return title;
     }
