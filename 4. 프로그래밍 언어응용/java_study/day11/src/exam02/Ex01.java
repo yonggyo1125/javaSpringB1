@@ -5,6 +5,11 @@ public class Ex01 {
         Box box = new Box();
         box.put(new Apple()); // Object item = new Apple()
 
-
+        //Apple apple = (Apple)box.get();
+        Object obj = box.get();
+        if (obj instanceof Melon) {
+            Melon apple = (Melon)obj;
+            System.out.println(apple.get());
+        }
     }
 }
