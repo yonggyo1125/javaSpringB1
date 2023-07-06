@@ -1,5 +1,7 @@
 package exam04;
 
-public abstract class Fruit {
+import java.util.List;
+
+public abstract class Fruit<T> {
 
 }
