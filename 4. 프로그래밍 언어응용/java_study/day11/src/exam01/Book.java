@@ -1,9 +1,10 @@
 package exam01;
 
+@MyAnno("이름1")
 public class Book {
+
     private String title;
     private String author;
-
 
     public String getTitle() {
         return title;
