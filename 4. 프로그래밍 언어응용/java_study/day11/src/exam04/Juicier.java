@@ -1,7 +1,10 @@
 package exam04;
 
-public class Juicier {
-    public static void make() {
+import java.util.List;
 
+public class Juicier {
+    public static void make(FruitBasket<Apple> basket) {
+        List<Apple> fruits = basket.gets();
+        System.out.println(fruits);
     }
 }
