@@ -1,6 +1,6 @@
 package exam01;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String title;
     private String author;
     private String publisher;
@@ -44,12 +44,26 @@ public class Book {
         this.publisher = publisher;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
+                ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return title.compareTo(o.title);// 기본 정렬은 책 제목으로 오름차순
     }
 }
