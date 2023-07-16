@@ -11,6 +11,7 @@ public class Ex01 {
             Book book1 = new Book("책1", "저자1", "출판사1");
             Book book2 = new Book("책2", "저자2", "출판사2");
 
+            oos.writeObject("책");
             oos.writeObject(book1);
             oos.writeObject(book2);
 
