@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 //@Setter @Getter @ToString
 //@NoArgsConstructor
 @Data
+@NoArgsConstructor(access=AccessLevel.PRIVATE) // private Users() {}
 @AllArgsConstructor
 @Log
 public class Users {
