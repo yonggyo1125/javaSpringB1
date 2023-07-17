@@ -10,6 +10,20 @@ public class Users {
 
     private Users() {}
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "userId='" + userId + '\'' +
+                ", userPw='" + userPw + '\'' +
+                ", userNm='" + userNm + '\'' +
+                ", regDt=" + regDt +
+                '}';
+    }
+
     static class Builder {
         private Users instance = new Users();
 
@@ -35,6 +49,10 @@ public class Users {
             instance.regDt = regDt;
 
             return this;
+        }
+
+        public Users build() {
+            return instance;
         }
     }
 }
