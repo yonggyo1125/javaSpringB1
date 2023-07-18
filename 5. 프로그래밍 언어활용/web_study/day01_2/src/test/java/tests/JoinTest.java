@@ -1,29 +1,92 @@
 package tests;
 
 import members.JoinService;
+import members.Users;
+import members.ValidationException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
+
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("회원 가입 테스트")
 public class JoinTest {
 
+    private JoinService joinService;
+
+    /**
+     * 회원 가입시 정상 회원 데이터
+     *
+     * @return
+     */
+    private Users getUserSuccess() {
+        Users users = new Users();
+        users.setUserId("user01");
+        users.setUserPw("_aA123456");
+        users.setUserNm("사용자01");
+        users.setRegDt(LocalDateTime.now());
+
+        return users;
+    }
+
+    private Users getUserFail() {
+        return new Users();
+    }
+
+    @BeforeEach // 초기화 작업
+    void init() {
+        joinService = new JoinService();
+    }
+
     @Test
     @DisplayName("회원 가입 성공시 예외 발생 없음")
     void joinSuccessTest() {
-        JoinService joinService = new JoinService();
-
         assertDoesNotThrow(() -> {
-            joinService.join();
+            joinService.join(getUserSuccess());
         });
     }
 
     @Test
     @DisplayName("필수 항목(userId, userPw, userNm) 검증, 검증 실패시 ValidationException 발생")
     void requiredFieldsTest() {
+        assertAll(
+                // userId null 또는 빈값(공백 포함)
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserSuccess();
+                    user.setUserId(null);
+                    joinService.join(user);
+                }),
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserSuccess();
+                    user.setUserId("     ");
+                    joinService.join(user);
+                }),// userPw null 또는 빈값(공백 포함)
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserSuccess();
+                    user.setUserPw(null);
+                    joinService.join(user);
+                }),
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserFail();
+                    user.setUserPw("     ");
+                    joinService.join(user);
+                }),
+                // userNm null 또는 빈값(공백 포함)
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserSuccess();
+                    user.setUserNm(null);
+                    joinService.join(user);
+                }),
+                () -> assertThrows(ValidationException.class, () -> {
+                    Users user = getUserSuccess();
+                    user.setUserNm("     ");
+                    joinService.join(user);
+                })
+        );
+
 
     }
 
