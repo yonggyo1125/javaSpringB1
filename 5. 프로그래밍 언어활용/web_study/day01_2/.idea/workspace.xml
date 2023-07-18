@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f1c282-4c6a-4634-8990-c60d1cf9dddf" name="Changes" comment="강의 소스">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam03/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/members/JoinValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/validators/RequiredValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LifeCycleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/MockTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TempFileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TimeoutTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam03/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/ValidationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MockTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MockTest1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +42,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.TimeoutTest.test1">
-    <configuration name="JoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MockTest1">
+    <configuration name="MockTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
         <pattern>
@@ -63,13 +52,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.MockTest1" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinTest.requiredFieldsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MockTest1.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
         <pattern>
@@ -78,14 +67,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinTest" />
-      <option name="METHOD_NAME" value="requiredFieldsTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.MockTest1" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LifeCycleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MockTest1.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +83,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LifeCycleTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="tests.MockTest1" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TempFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MockTest1.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
         <pattern>
@@ -109,8 +99,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TempFileTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="tests.MockTest1" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MockTest1" />
+        <item itemvalue="JUnit.MockTest1.test3" />
+        <item itemvalue="JUnit.MockTest1.test2" />
+        <item itemvalue="JUnit.MockTest1.test1" />
         <item itemvalue="JUnit.TimeoutTest.test1" />
-        <item itemvalue="JUnit.TempFileTest" />
-        <item itemvalue="JUnit.LifeCycleTest" />
-        <item itemvalue="JUnit.JoinTest" />
-        <item itemvalue="JUnit.JoinTest.requiredFieldsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689641473224</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="강의 소스">
+      <option name="closed" value="true" />
+      <created>1689645099208</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689645099208</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
