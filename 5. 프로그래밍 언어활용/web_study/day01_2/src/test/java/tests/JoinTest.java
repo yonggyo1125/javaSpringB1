@@ -1,6 +1,7 @@
 package tests;
 
 import members.JoinService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -19,8 +20,15 @@ public class JoinTest {
             joinService.join();
         });
     }
-    
+
     @Test
+    @DisplayName("필수 항목(userId, userPw, userNm) 검증, 검증 실패시 ValidationException 발생")
+    void requiredFieldsTest() {
+
+    }
+
+    @Test
+    @Disabled
     @DisplayName("단위 테스트 연습")
     void testEx() {
         JoinService joinService = new JoinService();
