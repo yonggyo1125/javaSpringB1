@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f1c282-4c6a-4634-8990-c60d1cf9dddf" name="Changes" comment="강의 소스">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam03/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/members/JoinValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/validators/RequiredValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LifeCycleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/MockTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TempFileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TimeoutTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/members/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/members/JoinValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/JoinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/members/JoinValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/members/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/members/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/members/ValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -41,20 +53,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.JoinTest.requiredFieldsTest">
-    <configuration name="exam03.Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exam03.Ex01" />
-      <module name="day01_2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exam03.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TimeoutTest.test1">
     <configuration name="JoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
@@ -66,22 +65,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.JoinTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JoinTest.joinSuccessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="day01_2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinTest" />
-      <option name="METHOD_NAME" value="joinSuccessTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinTest.testEx" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LifeCycleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day01_2" />
       <extension name="coverage">
         <pattern>
@@ -111,8 +94,38 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinTest" />
-      <option name="METHOD_NAME" value="testEx" />
+      <option name="MAIN_CLASS_NAME" value="tests.LifeCycleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TempFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day01_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TempFileTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeoutTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day01_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TimeoutTest" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JoinTest.requiredFieldsTest" />
+        <item itemvalue="JUnit.TimeoutTest.test1" />
+        <item itemvalue="JUnit.TempFileTest" />
+        <item itemvalue="JUnit.LifeCycleTest" />
         <item itemvalue="JUnit.JoinTest" />
-        <item itemvalue="JUnit.JoinTest.joinSuccessTest" />
-        <item itemvalue="JUnit.JoinTest.testEx" />
-        <item itemvalue="Application.exam03.Ex01" />
+        <item itemvalue="JUnit.JoinTest.requiredFieldsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689641269722</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="강의 소스">
+      <option name="closed" value="true" />
+      <created>1689641473224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689641473224</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

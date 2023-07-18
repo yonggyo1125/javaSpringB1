@@ -1,6 +1,7 @@
 package tests;
 
 import members.JoinService;
+import members.JoinValidator;
 import members.Users;
 import members.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,7 +39,8 @@ public class JoinTest {
 
     @BeforeEach // 초기화 작업
     void init() {
-        joinService = new JoinService();
+        JoinValidator joinValidator = new JoinValidator();
+        joinService = new JoinService(joinValidator);
     }
 
     @Test
@@ -54,11 +56,18 @@ public class JoinTest {
     void requiredFieldsTest() {
         assertAll(
                 // userId null 또는 빈값(공백 포함)
-                () -> assertThrows(ValidationException.class, () -> {
-                    Users user = getUserSuccess();
-                    user.setUserId(null);
-                    joinService.join(user);
-                }),
+                () -> {
+                    // 예외 발생 여부
+                    ValidationException thrown = assertThrows(ValidationException.class, () -> {
+                        Users user = getUserSuccess();
+                        user.setUserId(null);
+                        joinService.join(user);
+                    });
+
+                    // 정확한 예외 발생 문구
+                    String message = thrown.getMessage();
+                    assertTrue(message.contains("아이디를 입력"));
+                },
                 () -> assertThrows(ValidationException.class, () -> {
                     Users user = getUserSuccess();
                     user.setUserId("     ");
@@ -86,7 +95,11 @@ public class JoinTest {
                     joinService.join(user);
                 })
         );
+    }
 
+    @Test
+    @DisplayName("userId는 6자리 이상 입력 검증, 실패시 ValidationException, 아이디는 6자리 이상 입력하세요.")
+    void userIdLengthCheckTest() {
 
     }
 
@@ -94,7 +107,7 @@ public class JoinTest {
     @Disabled
     @DisplayName("단위 테스트 연습")
     void testEx() {
-        JoinService joinService = new JoinService();
+        //JoinService joinService = new JoinService();
         //assertEquals(0, joinService.join());
 
         //assertTrue(joinService.join());
