@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 public class JoinServlet extends HttpServlet {
     @Override
@@ -32,7 +33,10 @@ public class JoinServlet extends HttpServlet {
         String userId = req.getParameter("userId");
         String password = req.getParameter("password");
         String userNm = req.getParameter("userNm");
+        //String hobby = req.getParameter("hobby");
+        String[] hobbies = req.getParameterValues("hobby"); // 여러개 항목을 조회
 
         System.out.printf("userId=%s, password=%s, userNm=%s%n", userId, password, userNm);
+        System.out.println(Arrays.toString(hobbies));
     }
 }

@@ -12,4 +12,13 @@
         <servlet-name>join-servlet</servlet-name>
         <url-pattern>/join</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>life-cycle-servlet</servlet-name>
+        <servlet-class>servlets.LifeCycleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>life-cycle-servlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
 </web-app>
