@@ -1,6 +1,7 @@
 package servlets;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
+@WebServlet("/join")
 public class JoinServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,6 +27,8 @@ public class JoinServlet extends HttpServlet {
         out.print("<input type='checkbox' name='hobby' value='취미3'>취미3<br>");
         out.print("<button type='submit'>가입하기</button>");
         out.print("</form>");
+
+        System.out.println("doGet!!");
     }
 
     @Override
