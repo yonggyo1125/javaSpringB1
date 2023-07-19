@@ -19,7 +19,20 @@ public class JoinServlet extends HttpServlet {
         out.print("아이디 : <input type='text' name='userId'><br>");
         out.print("비밀번호 : <input type='password' name='password'><br>");
         out.print("회원명 : <input type='text' name='userNm'><br>");
+        out.print("취미 : <input type='checkbox' name='hobby' value='취미1'>취미1");
+        out.print("<input type='checkbox' name='hobby' value='취미2'>취미2");
+        out.print("<input type='checkbox' name='hobby' value='취미3'>취미3<br>");
         out.print("<button type='submit'>가입하기</button>");
         out.print("</form>");
+    }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        String userId = req.getParameter("userId");
+        String password = req.getParameter("password");
+        String userNm = req.getParameter("userNm");
+
+        System.out.printf("userId=%s, password=%s, userNm=%s%n", userId, password, userNm);
     }
 }
