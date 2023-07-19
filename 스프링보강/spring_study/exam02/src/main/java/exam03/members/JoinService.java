@@ -1,4 +1,4 @@
-package exam02.members;
+package exam03.members;
 
 public class JoinService {
 
