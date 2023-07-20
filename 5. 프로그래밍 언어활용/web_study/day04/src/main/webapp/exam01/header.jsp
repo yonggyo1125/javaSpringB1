@@ -9,3 +9,4 @@
         <header>
             <h1>상단 공통!</h1>
         </header>
+        <main>
