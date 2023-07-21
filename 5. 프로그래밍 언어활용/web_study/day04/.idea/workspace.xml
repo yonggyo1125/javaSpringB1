@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65708984-f9f7-461c-96fe-3904330003dd" name="Changes" comment="강의소스">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex03.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/board/ListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/board/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex04.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam04/ex02.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex02.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam04/ex03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex03.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689904784321</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="강의소스">
+      <option name="closed" value="true" />
+      <created>1689905873527</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689905873527</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
