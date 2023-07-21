@@ -9,6 +9,7 @@ public class AppCtx {
 
     @Bean
     public UserDao userDao() {
+
         return new UserDao();
     }
 
