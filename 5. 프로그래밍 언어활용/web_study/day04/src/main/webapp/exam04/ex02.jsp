@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<jsp:useBean id="book" class="models.book.Book" scope="page" />
+<%@ page import="models.book.Book" %>
+<jsp:useBean id="book" class="models.book.Book" scope="application" />
 <%
     Book book2 = (Book)pageContext.getAttribute("book");
     Book book3 = (Book)request.getAttribute("book");
