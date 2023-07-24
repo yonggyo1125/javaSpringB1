@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65708984-f9f7-461c-96fe-3904330003dd" name="Changes" comment="강의소스" />
+    <list default="true" id="65708984-f9f7-461c-96fe-3904330003dd" name="Changes" comment="강의소스">
+      <change afterPath="$PROJECT_DIR$/../../../4. 프로그래밍 언어응용/java_study/CodingTest/src/coding/test/Ex09.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam06/ex01.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam06/ex02.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam06/ex02_ps.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
