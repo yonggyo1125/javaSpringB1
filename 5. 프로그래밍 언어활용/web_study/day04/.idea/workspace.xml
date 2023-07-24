@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65708984-f9f7-461c-96fe-3904330003dd" name="Changes" comment="강의소스">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam07/ex08.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam07/ex09.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam07/ex10.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/exam07/ex07.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam07/ex07.jsp" afterDir="false" />
     </list>
@@ -50,8 +53,11 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="contextPath" value="/day04" />
+      <option name="contextPath" value="/day05" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="port" value="3000" />
       <option name="tomcatInfo">
@@ -245,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690166968082</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="강의소스">
+      <option name="closed" value="true" />
+      <created>1690167095203</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690167095203</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
