@@ -7,7 +7,7 @@
 <h1>Asia/Seoul</h1>
 <fmt:timeZone value="Asia/Seoul">
     <fmt:formatDate value="${date}" type="both" />
-</fmt>
+</fmt:timeZone>
 
 <h1>Asia/Jakarta</h1>
 <fmt:timeZone value="Asia/Jakarta">
