@@ -5,8 +5,8 @@ public class Ex01 {
         ImplCalculator cal1 = new ImplCalculator();
         RecCalculator cal2 = new RecCalculator();
 
-        long stime = System.nanoTime();
-        long result1 = cal1.factorial(10);
+        long stime = System.nanoTime(); // 추가기능
+        long result1 = cal1.factorial(10); // 핵심
         System.out.println("cal1 : " + result1);
         long etime = System.nanoTime();
         System.out.println("걸린 시간 : " + (etime - stime));
