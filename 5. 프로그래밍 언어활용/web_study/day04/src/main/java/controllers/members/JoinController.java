@@ -17,8 +17,8 @@ public class JoinController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String[] addScript = { "member/form.js", "member/util.js" };
-        List<String> addCss = Arrays.asList("member/join.css", "member/util.css");
+        String[] addScript = { "member/form", "member/util" };
+        List<String> addCss = Arrays.asList("member/join", "member/util");
 
         req.setAttribute("addScript", addScript);
         req.setAttribute("addCss", addCss);
