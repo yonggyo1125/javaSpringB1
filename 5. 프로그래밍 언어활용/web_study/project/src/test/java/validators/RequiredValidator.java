@@ -12,4 +12,15 @@ public interface RequiredValidator {
             throw e;
         }
     }
+
+    /**
+     * true인지 검증
+     * @param field
+     * @param e
+     */
+    default void requiredTrue(boolean field, RuntimeException e) {
+        if (!field) {
+            throw e;
+        }
+    }
 }
