@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b33e2ab4-f1b4-4cf0-89f3-b171cefb8c3b" name="Changes" comment="수업 소스">
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/JoinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layouts/common.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layouts/common.tag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/DuplicatedMemberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/DuplicatedMemberException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginServicee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginServicee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/validators/LengthValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/LengthValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/validators/RequiredValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/RequiredValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +58,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.JoinServiceTest">
+  <component name="RunManager" selected="Smart Tomcat.tomcat10">
     <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
@@ -76,7 +90,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinServiceTest.userIdLengthCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JoinServiceTest.joinSuccessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +100,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
-      <option name="METHOD_NAME" value="userIdLengthCheckTest" />
+      <option name="METHOD_NAME" value="joinSuccessTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,18 +164,18 @@
     <list>
       <item itemvalue="JUnit.JoinServiceTest" />
       <item itemvalue="JUnit.JoinServiceTest.duplicateUserIdTest" />
-      <item itemvalue="JUnit.JoinServiceTest.userIdLengthCheckTest" />
       <item itemvalue="JUnit.JoinServiceTest.userPwCorrectCheckTest" />
       <item itemvalue="JUnit.JoinServiceTest.userPwLengthCheckTest" />
+      <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
       <item itemvalue="Smart Tomcat.tomcat10" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.JoinServiceTest" />
+        <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
         <item itemvalue="JUnit.JoinServiceTest.duplicateUserIdTest" />
         <item itemvalue="JUnit.JoinServiceTest.userPwCorrectCheckTest" />
         <item itemvalue="JUnit.JoinServiceTest.userPwLengthCheckTest" />
-        <item itemvalue="JUnit.JoinServiceTest.userIdLengthCheckTest" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690421980644</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690422716792</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690422716792</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

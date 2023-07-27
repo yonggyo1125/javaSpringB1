@@ -23,14 +23,6 @@ public class JoinServiceTest {
     @BeforeEach
     void init() {
        joinService = ServiceManager.getInstance().joinService();
-
-       /** HttpServletRequest::getParameter 호출시 stub(가짜 데이터) 처리 */
-       Member member = getMember();
-       given(request.getParameter("userId")).willReturn(member.getUserId());
-       given(request.getParameter("userPw")).willReturn(member.getUserPw());
-       given(request.getParameter("userPwRe")).willReturn(member.getUserPwRe());
-       given(request.getParameter("userNm")).willReturn(member.getUserNm());
-       given(request.getParameter("agree")).willReturn(String.valueOf(member.isAgree()));
     }
 
     /**
@@ -52,10 +44,19 @@ public class JoinServiceTest {
     @Test
     @DisplayName("회원 가입 성공시 예외가 발생하지 않음")
     void joinSuccessTest() {
+        /** HttpServletRequest::getParameter 호출시 stub(가짜 데이터) 처리 */
+        Member member = getMember();
+        given(request.getParameter("userId")).willReturn(member.getUserId());
+        given(request.getParameter("userPw")).willReturn(member.getUserPw());
+        given(request.getParameter("userPwRe")).willReturn(member.getUserPwRe());
+        given(request.getParameter("userNm")).willReturn(member.getUserNm());
+        given(request.getParameter("agree")).willReturn(String.valueOf(member.isAgree()));
 
-        assertDoesNotThrow(() -> {
-            joinService.join(getMember());
-        });
+        assertAll(
+                () -> assertDoesNotThrow(() -> joinService.join(getMember())),
+                () -> assertDoesNotThrow(() -> joinService.join(request))
+        );
+
     }
 
     @Test
