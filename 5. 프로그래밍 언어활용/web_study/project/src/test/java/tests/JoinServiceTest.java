@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 
+@DisplayName("회원가입 기능 단위테스트")
 @ExtendWith(MockitoExtension.class)
 public class JoinServiceTest {
 
