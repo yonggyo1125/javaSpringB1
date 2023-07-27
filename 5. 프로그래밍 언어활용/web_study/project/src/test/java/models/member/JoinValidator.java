@@ -5,6 +5,13 @@ import validators.RequiredValidator;
 import validators.Validator;
 
 public class JoinValidator implements Validator<Member>, RequiredValidator, LengthValidator {
+
+    private MemberDao memberDao;
+
+    private void setMemberDao(MemberDao memberDao) {
+        this.memberDao = memberDao;
+    }
+
     @Override
     public void check(Member member) {
         String userId = member.getUserId();
@@ -35,6 +42,11 @@ public class JoinValidator implements Validator<Member>, RequiredValidator, Leng
         // 비밀번호와 비밀번호 확인 일치 여부 체크
         if (!userPw.equals(userPwRe)) {
             throw new JoinValidationException("비밀번호가 정확하지 않습니다.");
+        }
+
+        // 아이디의 중복 가입 여부 체크
+        if (memberDao.exists(userId)) {
+            throw new DuplicatedMemberException();
         }
 
     }

@@ -17,5 +17,8 @@ public class JoinService {
         // 유효성 검사
         validator.check(member);
 
+        // 회원 가입
+        memberDao.register(member);
+
     }
 }
