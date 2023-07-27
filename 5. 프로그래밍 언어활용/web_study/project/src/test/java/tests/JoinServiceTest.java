@@ -2,6 +2,7 @@ package tests;
 
 import models.member.JoinService;
 import models.member.JoinValidationException;
+import models.member.JoinValidator;
 import models.member.Member;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +16,7 @@ public class JoinServiceTest {
     
     @BeforeEach
     void init() {
-        joinService = new JoinService();
+        joinService = new JoinService(new JoinValidator());
     }
 
     /**
