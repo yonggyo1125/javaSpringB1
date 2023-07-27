@@ -1,7 +1,10 @@
 package tests;
 
 import jakarta.servlet.http.HttpServletRequest;
+import models.member.JoinValidationException;
 import models.member.LoginService;
+import models.member.LoginValidationException;
+import models.member.Member;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,6 +45,38 @@ public class LoginServiceTest {
     @Test
     @DisplayName("로그인 필수 항목(userId, userPw) 체크, 검증 실패시 LoginValidationException")
     void requiredFieldsTest() {
+        assertAll(
+                // userId 필수 여부 체크
+                () -> {
+                    createRequestData(null, "12345678");
+                    LoginValidationException thrown = assertThrows(LoginValidationException.class, () -> loginService.login(request));
 
+                    if (thrown != null) {
+                        assertTrue(thrown.getMessage().contains("아이디를 입력"));
+                    }
+
+                    createRequestData("  ", "12345678");
+                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+                },
+                // userPw 필수 여부 체크
+                () -> {
+                    createRequestData("user01", null);
+                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+
+                    createRequestData("user01", "    ");
+                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+                }
+        );
+        
+        
+    }
+
+    private void requiredTestEach(String message) {
+        JoinValidationException thrown = assertThrows(JoinValidationException.class, () -> {
+            loginService.login(request);
+        });
+        if (thrown != null) {
+            assertTrue(thrown.getMessage().contains(message));
+        }
     }
 }
