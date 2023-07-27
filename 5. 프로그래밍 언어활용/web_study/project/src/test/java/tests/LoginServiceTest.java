@@ -1,10 +1,7 @@
 package tests;
 
 import jakarta.servlet.http.HttpServletRequest;
-import models.member.JoinValidationException;
-import models.member.LoginService;
-import models.member.LoginValidationException;
-import models.member.Member;
+import models.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,7 +23,7 @@ public class LoginServiceTest {
 
     @BeforeEach
     void init() {
-        loginService = new LoginService();
+        loginService = ServiceManager.getInstance().loginService();
     }
 
     private void createRequestData(String userId, String userPw) {
