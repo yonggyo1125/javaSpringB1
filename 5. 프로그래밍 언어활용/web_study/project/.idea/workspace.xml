@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b33e2ab4-f1b4-4cf0-89f3-b171cefb8c3b" name="Changes" comment="수업 소스">
-      <change afterPath="$PROJECT_DIR$/src/test/java/validators/LengthValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/JoinValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" afterDir="false" />
@@ -46,7 +45,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.JoinServiceTest.requiredFieldTest">
+  <component name="RunManager" selected="JUnit.JoinServiceTest.userPwLengthCheckTest">
     <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
@@ -94,6 +93,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JoinServiceTest.userIdLengthCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
+      <option name="METHOD_NAME" value="userIdLengthCheckTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JoinServiceTest.userPwLengthCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
+      <option name="METHOD_NAME" value="userPwLengthCheckTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tomcat10" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
@@ -119,12 +150,16 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.JoinServiceTest" />
+      <item itemvalue="JUnit.JoinServiceTest.userIdLengthCheckTest" />
+      <item itemvalue="JUnit.JoinServiceTest.userPwLengthCheckTest" />
       <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
       <item itemvalue="JUnit.JoinServiceTest.requiredFieldTest" />
       <item itemvalue="Smart Tomcat.tomcat10" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JoinServiceTest.userPwLengthCheckTest" />
+        <item itemvalue="JUnit.JoinServiceTest.userIdLengthCheckTest" />
         <item itemvalue="JUnit.JoinServiceTest.requiredFieldTest" />
         <item itemvalue="JUnit.JoinServiceTest" />
         <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
@@ -228,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690419091946</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690420026647</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690420026647</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

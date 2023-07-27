@@ -101,7 +101,15 @@ public class JoinServiceTest {
     void userIdLengthCheckTest() {
         Member member = getMember();
         member.setUserId("user");
-        requiredTestEach(member, "아이디는 6자리");
+        lengthTest(member, "아이디는 6자리");
+    }
+
+    @Test
+    @DisplayName("userPw는 8자리 이상 입력, 검증 실패시 JoinValidationException")
+    void userPwLengthCheckTest() {
+        Member member = getMember();
+        member.setUserPw("1234");
+        lengthTest(member,"비밀번호는 8자리");
     }
 
     @Test
@@ -117,5 +125,9 @@ public class JoinServiceTest {
         if (thrown != null) {
             assertTrue(thrown.getMessage().contains(message));
         }
+    }
+
+    private void lengthTest(Member member, String message) {
+        requiredTestEach(member, message);
     }
 }
