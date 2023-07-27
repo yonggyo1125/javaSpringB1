@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b33e2ab4-f1b4-4cf0-89f3-b171cefb8c3b" name="Changes" comment="수업 소스">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/JoinValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/validators/RequiredValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/RequiredValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.JoinServiceTest">
+  <component name="RunManager" selected="JUnit.JoinServiceTest.requiredFieldTest">
     <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
@@ -124,8 +123,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JoinServiceTest" />
         <item itemvalue="JUnit.JoinServiceTest.requiredFieldTest" />
+        <item itemvalue="JUnit.JoinServiceTest" />
         <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
       </list>
     </recent_temporary>
@@ -203,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690417505419</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690417716387</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690417716387</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

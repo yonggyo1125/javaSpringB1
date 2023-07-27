@@ -45,21 +45,61 @@ public class JoinServiceTest {
     }
 
     @Test
-    @DisplayName("필수항목(userId, userPw, userPwRe, userNm) 검증, 검증 실패시 JoinValidationException")
+    @DisplayName("필수항목(userId, userPw, userPwRe, userNm, agree) 검증, 검증 실패시 JoinValidationException")
     void requiredFieldTest() {
-        // null, ''(빈값)
-        // userId 필수 항목 검증 S
-        assertThrows(JoinValidationException.class, () -> {
-            Member member = getMember();
-            member.setUserId(null);
-            joinService.join(member);
-        });
 
-        assertThrows(JoinValidationException.class, () -> {
-            Member member = getMember();
-            member.setUserId("      ");
+        assertAll(
+                () -> { // userId 필수 검증
+                    Member member = getMember();
+                    member.setUserId(null);
+                    requiredTestEach(member, "아이디를 입력");
+
+                    member.setUserId("    ");
+                    requiredTestEach(member, "아이디를 입력");
+                   
+                },
+                () -> { // userPw 필수 검증
+                    Member member = getMember();
+                    member.setUserPw(null);
+                    requiredTestEach(member, "비밀번호를 입력");
+
+                    member.setUserPw("    ");
+                    requiredTestEach(member, "비밀번호를 입력");
+                },
+                () -> { // userPwRe 필수 검증
+                    Member member = getMember();
+                    member.setUserPwRe(null);
+                    requiredTestEach(member, "비밀번호를 확인");
+
+                    member.setUserPwRe("    ");
+                    requiredTestEach(member, "비밀번호를 확인");
+                },
+                () -> { // userNm 필수 검증
+                    Member member = getMember();
+                    member.setUserNm(null);
+                    requiredTestEach(member, "회원명을 입력");
+
+                    member.setUserNm("    ");
+                    requiredTestEach(member, "회원명을 입력");
+                },
+                () -> { // agree 필수 검증
+                    Member member = getMember();
+                    member.setAgree(false);
+                    requiredTestEach(member, "회원가입 약관");
+                }
+        );
+        
+        
+        
+       
+    }
+
+    private void requiredTestEach(Member member, String message) {
+        JoinValidationException thrown = assertThrows(JoinValidationException.class, () -> {
             joinService.join(member);
         });
-        // userId 필수 항목 검증 E
+        if (thrown != null) {
+            assertTrue(thrown.getMessage().contains(message));
+        }
     }
 }

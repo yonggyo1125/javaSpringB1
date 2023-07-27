@@ -19,6 +19,6 @@ public class JoinValidator implements Validator<Member>, RequiredValidator {
         requiredCheck(member.getUserNm(), new JoinValidationException("회원명을 입력하세요."));
 
         // 약관 동의 여부
-        requiredTrue(member.isAgree(), new RuntimeException("회원가입 약관에 동의하세요."));
+        requiredTrue(member.isAgree(), new JoinValidationException("회원가입 약관에 동의하세요."));
     }
 }
