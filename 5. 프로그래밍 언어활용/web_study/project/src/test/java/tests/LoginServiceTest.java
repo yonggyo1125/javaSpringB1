@@ -49,22 +49,18 @@ public class LoginServiceTest {
                 // userId 필수 여부 체크
                 () -> {
                     createRequestData(null, "12345678");
-                    LoginValidationException thrown = assertThrows(LoginValidationException.class, () -> loginService.login(request));
-
-                    if (thrown != null) {
-                        assertTrue(thrown.getMessage().contains("아이디를 입력"));
-                    }
+                    requiredTestEach("아이디를 입력");
 
                     createRequestData("  ", "12345678");
-                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+                    requiredTestEach("아이디를 입력");
                 },
                 // userPw 필수 여부 체크
                 () -> {
                     createRequestData("user01", null);
-                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+                    requiredTestEach("비밀번호를 입력");
 
                     createRequestData("user01", "    ");
-                    assertThrows(LoginValidationException.class, () -> loginService.login(request));
+                    requiredTestEach("비밀번호를 입력");
                 }
         );
         
