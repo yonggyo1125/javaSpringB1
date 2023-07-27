@@ -1,9 +1,6 @@
 package tests;
 
-import models.member.JoinService;
-import models.member.JoinValidationException;
-import models.member.JoinValidator;
-import models.member.Member;
+import models.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -113,9 +110,22 @@ public class JoinServiceTest {
     }
 
     @Test
+    @DisplayName("비밀번호와 비밀번호 확인 일치여부 체크, 검증 실패시 JoinValidationException")
+    void userPwCorrectCheckTest() {
+        Member member = getMember();
+        member.setUserPwRe(member.getUserPw() + "1234");
+        requiredTestEach(member, "비밀번호가 정확하지");
+    }
+
+    @Test
     @DisplayName("중복된 아이디로 가입하면 DuplicatedMemberException 발생")
     void duplicateUserIdTest() {
+        assertThrows(DuplicatedMemberException.class, () -> {
+            Member member = getMember();
+            joinService.join(member);
 
+            joinService.join(member); // 중복 가입
+        });
     }
 
     private void requiredTestEach(Member member, String message) {
