@@ -68,9 +68,10 @@ public class LoginServiceTest {
     }
 
     private void requiredTestEach(String message) {
-        JoinValidationException thrown = assertThrows(JoinValidationException.class, () -> {
+        LoginValidationException thrown = assertThrows(LoginValidationException.class, () -> {
             loginService.login(request);
         });
+
         if (thrown != null) {
             assertTrue(thrown.getMessage().contains(message));
         }
