@@ -102,4 +102,16 @@ public class JoinServiceTest {
             assertTrue(thrown.getMessage().contains(message));
         }
     }
+
+    @Test
+    @DisplayName("userId는 6자리 이상 입력 체크, 검증 실패시 JoinValidationException")
+    void userIdLengthCheckTest() {
+
+    }
+
+    @Test
+    @DisplayName("중복된 아이디로 가입하면 DuplicatedMemberException 발생")
+    void duplicateUserIdTest() {
+
+    }
 }
