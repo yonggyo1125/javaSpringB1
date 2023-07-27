@@ -8,7 +8,7 @@ public class JoinValidator implements Validator<Member>, RequiredValidator, Leng
 
     private MemberDao memberDao;
 
-    private void setMemberDao(MemberDao memberDao) {
+    public void setMemberDao(MemberDao memberDao) {
         this.memberDao = memberDao;
     }
 
@@ -50,6 +50,4 @@ public class JoinValidator implements Validator<Member>, RequiredValidator, Leng
         }
 
     }
-
-
 }
