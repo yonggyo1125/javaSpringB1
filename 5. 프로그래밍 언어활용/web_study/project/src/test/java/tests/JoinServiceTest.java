@@ -1,19 +1,36 @@
 package tests;
 
+import jakarta.servlet.http.HttpServletRequest;
 import models.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.*;
 
+@ExtendWith(MockitoExtension.class)
 public class JoinServiceTest {
 
     private JoinService joinService;
-    
+
+    @Mock
+    HttpServletRequest request;
+
     @BeforeEach
     void init() {
-        joinService = new JoinService(new JoinValidator());
+       joinService = ServiceManager.getInstance().joinService();
+
+       /** HttpServletRequest::getParameter 호출시 stub(가짜 데이터) 처리 */
+       Member member = getMember();
+       given(request.getParameter("userId")).willReturn(member.getUserId());
+       given(request.getParameter("userPw")).willReturn(member.getUserPw());
+       given(request.getParameter("userPwRe")).willReturn(member.getUserPwRe());
+       given(request.getParameter("userNm")).willReturn(member.getUserNm());
+       given(request.getParameter("agree")).willReturn(String.valueOf(member.isAgree()));
     }
 
     /**
@@ -23,7 +40,7 @@ public class JoinServiceTest {
      */
     private Member getMember() {
         return Member.builder()
-                .userId("user01")
+                .userId("user" + System.currentTimeMillis())
                 .userPw("_aA123456")
                 .userPwRe("_aA123456")
                 .userNm("사용자01")
