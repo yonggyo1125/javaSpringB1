@@ -17,6 +17,9 @@ import static org.mockito.BDDMockito.*;
 public class LoginServiceTest {
 
     private LoginService loginService;
+    private JoinService joinService;
+
+    private Member member; // 가입한 회원 정보
 
     @Mock
     private HttpServletRequest request;
@@ -24,6 +27,17 @@ public class LoginServiceTest {
     @BeforeEach
     void init() {
         loginService = ServiceManager.getInstance().loginService();
+        joinService = ServiceManager.getInstance().joinService();
+
+        member = Member.builder()
+                .userId("user" + System.currentTimeMillis())
+                .userNm("사용자")
+                .userPw("_aA123456")
+                .userPwRe("_aA123456")
+                .agree(true)
+                .build();
+        joinService.join(member);
+
     }
 
     private void createRequestData(String userId, String userPw) {
@@ -60,8 +74,14 @@ public class LoginServiceTest {
                     requiredTestEach("비밀번호를 입력");
                 }
         );
-        
-        
+    }
+
+    @Test
+    @DisplayName("userId로 회원이 조회되는지 체크, 검증 실패시 MemberNotFoundException")
+    void memberExistsCheckTest() {
+        assertThrows(MemberNotFoundException.class, () -> {
+            loginService.login(request);
+        });
     }
 
     private void requiredTestEach(String message) {

@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b33e2ab4-f1b4-4cf0-89f3-b171cefb8c3b" name="Changes" comment="수업 소스">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/ServiceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/LoginServicee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,10 +159,10 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.JoinServiceTest" />
+      <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
       <item itemvalue="JUnit.LoginServiceTest" />
       <item itemvalue="JUnit.LoginServiceTest.loginSuccessTest" />
       <item itemvalue="JUnit.LoginServiceTest.requiredFieldsTest" />
-      <item itemvalue="JUnit.JoinServiceTest.joinSuccessTest" />
       <item itemvalue="Smart Tomcat.tomcat10" />
     </list>
     <recent_temporary>
@@ -389,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690428066283</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690428399330</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1690428399330</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

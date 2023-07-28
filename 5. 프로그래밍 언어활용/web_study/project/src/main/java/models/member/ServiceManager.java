@@ -30,10 +30,12 @@ public class ServiceManager {
     }
 
     public LoginValidator loginValidator() {
+
         return new LoginValidator();
     }
 
     public LoginService loginService() {
+
         return new LoginService(loginValidator());
     }
 }
