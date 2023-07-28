@@ -21,6 +21,7 @@ public class ProxyCalculator {
         long stime = System.nanoTime(); // 공통 추가 기능
 
         try {
+            /*
             Signature sig = joinPoint.getSignature();
             System.out.println(sig.toLongString());
 
@@ -29,7 +30,7 @@ public class ProxyCalculator {
 
             Object[] args = joinPoint.getArgs();
             System.out.println(Arrays.toString(args));
-
+            */
             Object result = joinPoint.proceed(); // factorial(..); // 핵심 기능 대신 수행
 
             return result;
