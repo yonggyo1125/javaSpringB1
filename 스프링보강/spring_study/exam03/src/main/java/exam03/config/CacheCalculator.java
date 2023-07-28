@@ -4,19 +4,25 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Aspect
+@Order(2)
 public class CacheCalculator {
 
     private Map<Long,Object> cache = new HashMap<>();
 
+    /*
     @Pointcut("execution(* exam03.aopex..*(..))")
     public void publicTarget() {}
-
-    @Around("publicTarget()")
+    */
+    //@Around("publicTarget()")
+    //@Around("execution(* exam03.aopex..*(..))")
+    @Around("exam03.aopex.CommonPointcut.publicTarget()")
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
 
         Object[] args = joinPoint.getArgs();

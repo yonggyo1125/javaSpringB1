@@ -8,10 +8,10 @@ public class Ex01 {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
-        Calculator cal = ctx.getBean(Calculator.class);
+        Calculator cal = ctx.getBean(RecCalculator.class);
         long result = cal.factorial(10);
         System.out.println("cal : " + result);
-
+        System.out.println(cal instanceof RecCalculator);
         ctx.close();
     }
 }
