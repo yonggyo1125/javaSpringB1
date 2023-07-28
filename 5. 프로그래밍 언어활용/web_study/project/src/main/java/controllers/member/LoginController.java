@@ -26,7 +26,7 @@ public class LoginController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             LoginService loginService = ServiceManager.getInstance().loginService();
-            loginService.login(req);
+            loginService.login(req, resp);
 
             // 로그인 성공시
             String url = req.getContextPath() + "/";
