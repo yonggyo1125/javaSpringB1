@@ -10,5 +10,12 @@
     <a href="${loginUrl}">로그인</a>
 </c:if>
 <c:if test="${sessionScope.member != null}"> <%-- 로그인 상태 --%>
+    <c:url var="logoutUrl" value="/member/logout" />
 
+    <fmt:message key="LOGIN_MSG">
+        <fmt:param>${sessionScope.member.userNm}</fmt:param>
+        <fmt:param>${sessionScope.member.userId}</fmt:param>
+    </fmt:message>
+    /
+    <a href="${logoutUrl}">로그아웃</a>
 </c:if>
