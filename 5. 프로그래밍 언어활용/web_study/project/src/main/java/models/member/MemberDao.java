@@ -16,6 +16,11 @@ public class MemberDao {
     }
 
     public boolean exists(String userId) {
+
         return members.containsKey(userId);
+    }
+
+    public Member get(String userId) {
+        return members.get(userId);
     }
 }

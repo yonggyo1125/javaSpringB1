@@ -1,6 +1,7 @@
 package tests;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import models.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -23,6 +24,9 @@ public class LoginServiceTest {
 
     @Mock
     private HttpServletRequest request;
+
+    @Mock
+    private HttpSession session;
 
     @BeforeEach
     void init() {
@@ -48,7 +52,11 @@ public class LoginServiceTest {
     @Test
     @DisplayName("로그인 성공시 예외 발생 하지 않음")
     void loginSuccessTest() {
+        given(request.getSession()).willReturn(session);
+        given(session.getAttribute("member")).willReturn(member);
+
         assertDoesNotThrow(() -> {
+            createRequestData(member.getUserId(), member.getUserPw());
             loginService.login(request);
         });
     }
@@ -59,18 +67,18 @@ public class LoginServiceTest {
         assertAll(
                 // userId 필수 여부 체크
                 () -> {
-                    createRequestData(null, "12345678");
+                    createRequestData(null, member.getUserPw());
                     requiredTestEach("아이디를 입력");
 
-                    createRequestData("  ", "12345678");
+                    createRequestData("  ", member.getUserPw());
                     requiredTestEach("아이디를 입력");
                 },
                 // userPw 필수 여부 체크
                 () -> {
-                    createRequestData("user01", null);
+                    createRequestData(member.getUserId(), null);
                     requiredTestEach("비밀번호를 입력");
 
-                    createRequestData("user01", "    ");
+                    createRequestData(member.getUserId(), "    ");
                     requiredTestEach("비밀번호를 입력");
                 }
         );
@@ -80,6 +88,7 @@ public class LoginServiceTest {
     @DisplayName("userId로 회원이 조회되는지 체크, 검증 실패시 MemberNotFoundException")
     void memberExistsCheckTest() {
         assertThrows(MemberNotFoundException.class, () -> {
+            createRequestData(member.getUserId() + "ab", member.getUserPw());
             loginService.login(request);
         });
     }

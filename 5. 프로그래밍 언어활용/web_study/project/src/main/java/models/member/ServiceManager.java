@@ -31,11 +31,11 @@ public class ServiceManager {
 
     public LoginValidator loginValidator() {
 
-        return new LoginValidator();
+        return new LoginValidator(memberDao());
     }
 
     public LoginService loginService() {
 
-        return new LoginService(loginValidator());
+        return new LoginService(loginValidator(), memberDao());
     }
 }
