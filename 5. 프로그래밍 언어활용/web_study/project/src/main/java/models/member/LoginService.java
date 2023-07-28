@@ -23,6 +23,6 @@ public class LoginService {
         String userId = request.getParameter("userId");
         Member member = memberDao.get(userId);
         HttpSession session = request.getSession();
-        session.setAttribute("member", session);
+        session.setAttribute("member", member);
     }
 }

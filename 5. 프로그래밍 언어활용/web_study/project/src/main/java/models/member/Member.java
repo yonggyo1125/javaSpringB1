@@ -1,10 +1,10 @@
 package models.member;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 @Data
-@Builder
+@Builder // 생성자 private
+//@AllArgsConstructor @NoArgsConstructor // Builder 패턴일때 public 범위의 기본 생성자 추가
 public class Member {
     private String userId; // 아이디
     private String userPw; // 비밀번호
