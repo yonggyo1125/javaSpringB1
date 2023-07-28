@@ -9,12 +9,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 
 @DisplayName("로그인 기능 단위 테스트")
 @ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.WARN)
 public class LoginServiceTest {
 
     private LoginService loginService;
@@ -92,7 +95,14 @@ public class LoginServiceTest {
             loginService.login(request);
         });
     }
-
+    
+    @Test
+    @DisplayName("가입된 회원의 비밀번호와 일치하는지 체크, 검증 실패시 LoginValidationException")
+    void passwordCheckTest() {
+        createRequestData(member.getUserId(), member.getUserPw() + "ab");
+        requiredTestEach("아이디 또는 비밀번호");
+    }
+    
     private void requiredTestEach(String message) {
         LoginValidationException thrown = assertThrows(LoginValidationException.class, () -> {
             loginService.login(request);

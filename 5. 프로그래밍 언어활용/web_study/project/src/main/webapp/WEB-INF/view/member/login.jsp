@@ -4,7 +4,7 @@
 <c:url var="action" value="/member/login" />
 <layout:main pageTitle="로그인">
     <h1>로그인</h1>
-    <form method="POST" action="${action}">
+    <form method="POST" action="${action}" target="ifrmProcess">
         <dl>
             <dt>아이디</dt>
             <dd>

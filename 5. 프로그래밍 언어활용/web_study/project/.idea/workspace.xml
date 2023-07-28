@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b33e2ab4-f1b4-4cf0-89f3-b171cefb8c3b" name="Changes" comment="수업 소스">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/member/LoginValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/MemberNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,22 +55,7 @@
       <recent name="models.member" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginServiceTest.memberExistsCheckTest">
-    <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Smart Tomcat.tomcat10">
     <configuration name="LoginServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
@@ -116,6 +103,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginServiceTest.passwordCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginServiceTest" />
+      <option name="METHOD_NAME" value="passwordCheckTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginServiceTest.requiredFieldsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project" />
       <extension name="coverage">
@@ -157,7 +160,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.LoginServiceTest.memberExistsCheckTest" />
-      <item itemvalue="JUnit.JoinServiceTest" />
+      <item itemvalue="JUnit.LoginServiceTest.passwordCheckTest" />
       <item itemvalue="JUnit.LoginServiceTest" />
       <item itemvalue="JUnit.LoginServiceTest.loginSuccessTest" />
       <item itemvalue="JUnit.LoginServiceTest.requiredFieldsTest" />
@@ -165,11 +168,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginServiceTest" />
+        <item itemvalue="JUnit.LoginServiceTest.passwordCheckTest" />
         <item itemvalue="JUnit.LoginServiceTest.memberExistsCheckTest" />
         <item itemvalue="JUnit.LoginServiceTest.requiredFieldsTest" />
-        <item itemvalue="JUnit.LoginServiceTest" />
         <item itemvalue="JUnit.LoginServiceTest.loginSuccessTest" />
-        <item itemvalue="JUnit.JoinServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -406,7 +409,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690503521572</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690504454296</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690504454296</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -1,6 +1,7 @@
 package models.member;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import validators.Validator;
 
 public class LoginService {
@@ -17,5 +18,11 @@ public class LoginService {
 
         // 유효성 검사
         validator.check(request);
+
+        // 로그인 처리
+        String userId = request.getParameter("userId");
+        Member member = memberDao.get(userId);
+        HttpSession session = request.getSession();
+        session.setAttribute("member", session);
     }
 }

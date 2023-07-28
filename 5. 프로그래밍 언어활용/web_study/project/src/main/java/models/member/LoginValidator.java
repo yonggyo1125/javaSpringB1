@@ -25,5 +25,11 @@ public class LoginValidator implements Validator<HttpServletRequest>, RequiredVa
         if (!memberDao.exists(userId)) { // 가입하지 않은 회원인 경우
             throw new MemberNotFoundException();
         }
+
+        /** 비밀번호 일치 여부 체크 */
+        Member member = memberDao.get(userId);
+        if (!member.getUserPw().equals(userPw)) { // 비밀번호가 일치하지 않는 경우
+            throw new LoginValidationException("아이디 또는 비밀번호가 일치하지 않습니다.");
+        }
     }
 }
