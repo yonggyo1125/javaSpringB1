@@ -1,6 +1,8 @@
 package exam02.models.member;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MemberDao {
@@ -21,6 +23,11 @@ public class MemberDao {
     }
 
     public Member get(String userId) {
+
         return members.get(userId);
+    }
+
+    public List<Member> gets() {
+        return new ArrayList<Member>(members.values());
     }
 }

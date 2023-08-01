@@ -3,6 +3,7 @@ package exam02.config;
 import exam02.models.member.JoinService;
 import exam02.models.member.JoinValidator;
 import exam02.models.member.MemberDao;
+import exam02.models.member.MemberListService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,5 +25,10 @@ public class AppCtx {
     @Bean
     public JoinService joinService() {
         return new JoinService(joinValidator(), memberDao());
+    }
+
+    @Bean
+    public MemberListService memberListService() {
+        return new MemberListService(memberDao());
     }
 }
