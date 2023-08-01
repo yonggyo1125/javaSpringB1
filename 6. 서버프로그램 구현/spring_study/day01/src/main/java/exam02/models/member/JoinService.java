@@ -1,12 +1,18 @@
 package exam02.models.member;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import validators.Validator;
 
 public class JoinService {
 
+    @Autowired
     private Validator<Member> validator;
+
+    @Autowired
     private MemberDao memberDao;
+
+    public JoinService() {}
 
     public JoinService(Validator validator, MemberDao memberDao) {
         this.validator = validator;

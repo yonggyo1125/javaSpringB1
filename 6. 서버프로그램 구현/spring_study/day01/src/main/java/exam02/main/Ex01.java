@@ -1,5 +1,6 @@
 package exam02.main;
 
+import exam02.config.AppCtx2;
 import exam02.models.member.JoinService;
 import exam02.models.member.Member;
 import exam02.models.member.MemberListService;
@@ -8,7 +9,7 @@ import exam02.config.AppCtx;
 
 public class Ex01 {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx2.class);
         JoinService joinService = ctx.getBean("joinService", JoinService.class);
         MemberListService listService = ctx.getBean("memberListService", MemberListService.class);
 
