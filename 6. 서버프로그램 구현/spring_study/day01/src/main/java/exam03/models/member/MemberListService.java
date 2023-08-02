@@ -1,20 +1,17 @@
-package exam02.models.member;
+package exam03.models.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.lang.Nullable;
-
+import org.springframework.stereotype.Service;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberListService {
 
-    //@Autowired
-    //private MemberDao memberDao;
     @Autowired
-    @Qualifier("memberDao2")
     private Optional<MemberDao> opt;
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy/MM/dd");
