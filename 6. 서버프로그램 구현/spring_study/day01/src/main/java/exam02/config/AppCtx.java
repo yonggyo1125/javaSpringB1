@@ -24,6 +24,7 @@ public class AppCtx {
 
     @Bean
     public JoinService joinService() {
+
         return new JoinService(joinValidator(), memberDao());
     }
 

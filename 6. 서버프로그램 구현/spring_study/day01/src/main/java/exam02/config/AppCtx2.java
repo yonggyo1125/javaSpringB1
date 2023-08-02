@@ -6,26 +6,27 @@ import exam02.models.member.MemberDao;
 import exam02.models.member.MemberListService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
+@Import(AppCtx3.class)
 @Configuration
 public class AppCtx2 {
-    @Bean
-    public MemberDao memberDao() {
-        return new MemberDao();
-    }
 
     @Bean
     public JoinService joinService() {
+
         return new JoinService();
     }
 
     @Bean
     public JoinValidator joinValidator() {
+
         return new JoinValidator();
     }
 
     @Bean
     public MemberListService memberListService() {
+
         return new MemberListService();
     }
 }
