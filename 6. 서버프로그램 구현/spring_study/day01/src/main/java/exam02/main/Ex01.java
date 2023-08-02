@@ -8,6 +8,8 @@ import exam02.models.member.MemberListService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import exam02.config.AppCtx;
 
+import java.time.LocalDateTime;
+
 public class Ex01 {
     public static void main(String[] args) {
        // AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx2.class, AppCtx3.class);
@@ -21,6 +23,7 @@ public class Ex01 {
                         .userPwRe("12345678")
                         .userNm("사용자01")
                         .agree(true)
+                        .regDt(LocalDateTime.now())
                         .build();
 
         joinService.join(member);

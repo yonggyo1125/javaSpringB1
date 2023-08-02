@@ -2,6 +2,7 @@ package exam02.models.member;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import validators.Validator;
 
 public class JoinService {
@@ -10,6 +11,7 @@ public class JoinService {
     private Validator<Member> validator;
 
     @Autowired
+    @Qualifier("memberDao2")
     private MemberDao memberDao;
 
     public JoinService() {}

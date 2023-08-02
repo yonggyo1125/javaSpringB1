@@ -3,6 +3,7 @@ package exam02.models.member;
 import exam02.models.member.DuplicatedMemberException;
 import exam02.models.member.JoinValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import validators.LengthValidator;
 import validators.RequiredValidator;
 import validators.Validator;
@@ -12,6 +13,7 @@ public class JoinValidator implements Validator<Member>, RequiredValidator, Leng
     private MemberDao memberDao;
 
     @Autowired
+    @Qualifier("memberDao2")
     public void setMemberDao(MemberDao memberDao) {
 
         this.memberDao = memberDao;

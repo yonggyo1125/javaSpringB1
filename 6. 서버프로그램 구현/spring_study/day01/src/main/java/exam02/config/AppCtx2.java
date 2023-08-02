@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import java.time.format.DateTimeFormatter;
+
 @Import(AppCtx3.class)
 @Configuration
 public class AppCtx2 {
@@ -28,5 +30,10 @@ public class AppCtx2 {
     public MemberListService memberListService() {
 
         return new MemberListService();
+    }
+
+    //@Bean
+    public DateTimeFormatter dateTimeFormatter() {
+        return DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
     }
 }
