@@ -1,21 +1,18 @@
 package exam04.models.member;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import validators.Validator;
 
 @Service
+@RequiredArgsConstructor
 public class JoinService { // 빈의 이름 joinService
 
-    private Validator<Member> validator;
+    private final Validator<Member> validator;
 
-    private MemberDao memberDao;
+    private final MemberDao memberDao;
 
-    public JoinService(Validator<Member> validator, MemberDao memberDao) {
-        this.validator = validator;
-        this.memberDao = memberDao;
-    }
 
     public void join(Member member) {
 
