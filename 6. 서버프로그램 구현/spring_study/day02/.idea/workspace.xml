@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228fafc1-061d-48b4-9190-dca0cf0c8e4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ImplCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/RecCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day01/src/main/java/exam05/config/AppCtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day01/src/main/java/exam05/config/AppCtx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day01/src/main/java/exam05/main/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day01/src/main/java/exam05/main/Ex01.java" afterDir="false" />
+    <list default="true" id="228fafc1-061d-48b4-9190-dca0cf0c8e4f" name="Changes" comment="수업 소스">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/ProxyCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/ImplCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam01/ImplCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/RecCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam01/RecCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +68,19 @@
       <option name="presentableId" value="Default" />
       <updated>1690946999069</updated>
     </task>
+    <task id="LOCAL-00001" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1690947836566</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690947836566</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="수업 소스" />
+    <option name="LAST_COMMIT_MESSAGE" value="수업 소스" />
   </component>
 </project>
