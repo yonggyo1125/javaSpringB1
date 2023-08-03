@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="228fafc1-061d-48b4-9190-dca0cf0c8e4f" name="Changes" comment="수업 소스">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex02.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam02/config/AppCtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam02/config/AppCtx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam02/config/ProxyCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam02/main/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exam02/main/Ex01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +86,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="exam02.main.Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam02.main.Ex02" />
+      <module name="day02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam02.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.exam02.main.Ex01" />
+        <item itemvalue="Application.exam02.main.Ex02" />
         <item itemvalue="Application.Ex02" />
         <item itemvalue="Application.Ex01" />
       </list>
@@ -147,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691025874209</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="수업 소스">
+      <option name="closed" value="true" />
+      <created>1691026335058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691026335058</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
