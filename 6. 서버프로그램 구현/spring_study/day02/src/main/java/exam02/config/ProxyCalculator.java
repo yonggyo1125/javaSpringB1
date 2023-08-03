@@ -13,9 +13,14 @@ public class ProxyCalculator {
 
     @Around("publicTarget()")
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
+        long stime = System.nanoTime(); // 공통 기능(추가)
+        try {
+            Object result = joinPoint.proceed(); // factorial 핵심 기능 대신 수행
 
-        Object result = joinPoint.proceed(); // factorial 핵심 기능 대신 수행
-        System.out.println("여기 호출 됩니까?");
-        return result;
+            return result;
+        } finally {
+            long etime = System.nanoTime(); // 공통 기능(추가)
+            System.out.println("걸린시간 : " + (etime - stime));
+        }
     }
 }
