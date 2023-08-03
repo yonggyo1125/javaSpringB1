@@ -10,11 +10,13 @@ import org.springframework.core.annotation.Order;
 @Aspect
 @Order(2)
 public class ProxyCalculator {
-
+    /*
     @Pointcut("execution(* exam02.aopex..*(..))")
     public void publicTarget() {}
 
     @Around("publicTarget()")
+     */
+    @Around("CommonPointcut.publicTarget()")
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
         /** 메서드 정보 */
         /*
