@@ -15,7 +15,7 @@ public class ProxyCalculator {
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
 
         Object result = joinPoint.proceed(); // factorial 핵심 기능 대신 수행
-
+        System.out.println("여기 호출 됩니까?");
         return result;
     }
 }
