@@ -26,33 +26,25 @@ public class BoardDao {
 
     public List<BoardData> gets() {
         String sql = "SELECT * FROM BOARD_DATA ORDER BY REGDT DESC";
-        List<BoardData> datas = jdbcTemplate.query(sql, (rs, i) -> {
-
-                return BoardData.builder()
-                        .id(rs.getLong("ID"))
-                        .poster(rs.getString("POSTER"))
-                        .subject(rs.getString("SUBJECT"))
-                        .content(rs.getString("CONTENT"))
-                        .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
-                        .build();
-
-        });
+        List<BoardData> datas = jdbcTemplate.query(sql, this::mapper);
 
         return datas;
     }
 
     public BoardData get(long id) {
         String sql = "SELECT * FROM BOARD_DATA WHERE ID = ?";
-        BoardData data = jdbcTemplate.queryForObject(sql, (rs, i ) -> {
-            return BoardData.builder()
-                    .id(rs.getLong("ID"))
-                    .poster(rs.getString("POSTER"))
-                    .subject(rs.getString("SUBJECT"))
-                    .content(rs.getString("CONTENT"))
-                    .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
-                    .build();
-        }, id);
+        BoardData data = jdbcTemplate.queryForObject(sql, this::mapper, id);
 
         return data;
+    }
+
+    private BoardData mapper(ResultSet rs, int i) throws SQLException {
+        return BoardData.builder()
+                .id(rs.getLong("ID"))
+                .poster(rs.getString("POSTER"))
+                .subject(rs.getString("SUBJECT"))
+                .content(rs.getString("CONTENT"))
+                .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
+                .build();
     }
 }
