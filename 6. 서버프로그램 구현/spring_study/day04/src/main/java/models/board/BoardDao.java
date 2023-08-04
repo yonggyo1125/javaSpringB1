@@ -2,9 +2,12 @@ package models.board;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -18,10 +21,23 @@ public class BoardDao {
     public boolean register(BoardData boardData) {
         String sql = "INSERT INTO BOARD_DATA (ID, POSTER, SUBJECT, CONTENT) " +
                       " VALUES(BOARD_DATA_SEQ.nextval, ?, ?, ?)";
-
+        /*
         int affectedRows = jdbcTemplate.update(sql, boardData.getPoster(), boardData.getSubject(), boardData.getContent());
+        */
 
-        return affectedRows > 0;
+        int affectedRows = jdbcTemplate.update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+                PreparedStatement pstmt = con.prepareStatement(sql);
+                pstmt.setString(1, boardData.getPoster());
+                pstmt.setString(2, boardData.getSubject());
+                pstmt.setString(3, boardData.getContent());
+
+                return pstmt;
+            }
+        });
+
+        //return affectedRows > 0;
     }
 
     public List<BoardData> gets() {
