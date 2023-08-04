@@ -2,7 +2,12 @@ package models.board;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -17,5 +22,37 @@ public class BoardDao {
         int affectedRows = jdbcTemplate.update(sql, boardData.getPoster(), boardData.getSubject(), boardData.getContent());
 
         return affectedRows > 0;
+    }
+
+    public List<BoardData> gets() {
+        String sql = "SELECT * FROM BOARD_DATA ORDER BY REGDT DESC";
+        List<BoardData> datas = jdbcTemplate.query(sql, (rs, i) -> {
+
+                return BoardData.builder()
+                        .id(rs.getLong("ID"))
+                        .poster(rs.getString("POSTER"))
+                        .subject(rs.getString("SUBJECT"))
+                        .content(rs.getString("CONTENT"))
+                        .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
+                        .build();
+
+        });
+
+        return datas;
+    }
+
+    public BoardData get(long id) {
+        String sql = "SELECT * FROM BOARD_DATA WHERE ID = ?";
+        BoardData data = jdbcTemplate.queryForObject(sql, (rs, i ) -> {
+            return BoardData.builder()
+                    .id(rs.getLong("ID"))
+                    .poster(rs.getString("POSTER"))
+                    .subject(rs.getString("SUBJECT"))
+                    .content(rs.getString("CONTENT"))
+                    .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
+                    .build();
+        }, id);
+
+        return data;
     }
 }
