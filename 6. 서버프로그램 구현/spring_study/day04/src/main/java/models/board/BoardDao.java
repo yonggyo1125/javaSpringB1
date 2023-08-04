@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -24,20 +26,24 @@ public class BoardDao {
         /*
         int affectedRows = jdbcTemplate.update(sql, boardData.getPoster(), boardData.getSubject(), boardData.getContent());
         */
-
+        KeyHolder keyHolder = new GeneratedKeyHolder();
         int affectedRows = jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-                PreparedStatement pstmt = con.prepareStatement(sql);
+                PreparedStatement pstmt = con.prepareStatement(sql, new String[]{"ID"});
                 pstmt.setString(1, boardData.getPoster());
                 pstmt.setString(2, boardData.getSubject());
                 pstmt.setString(3, boardData.getContent());
 
                 return pstmt;
             }
-        });
+        }, keyHolder);
 
-        //return affectedRows > 0;
+        Number key = keyHolder.getKey();
+        long ID = key.longValue();
+        boardData.setId(ID);
+
+        return affectedRows > 0;
     }
 
     public List<BoardData> gets() {
