@@ -20,15 +20,20 @@ public class Ex01 {
                         .build();
         boolean result = boardDao.register(data);
         System.out.println("결과 : " + result);
+        System.out.println(data);
+
+        long total = boardDao.getTotal();
+        System.out.println("총 갯수 : " + total);
 
         // gets()
+        /*
         List<BoardData> items = boardDao.gets();
         items.stream().forEach(System.out::println);
 
         // get()
         BoardData item = boardDao.get(25L);
         System.out.println(item);
-
+        */
         ctx.close();
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +17,12 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
+//@Transactional
 public class BoardDao {
 
     private final JdbcTemplate jdbcTemplate;
 
+    @Transactional
     public boolean register(BoardData boardData) {
         String sql = "INSERT INTO BOARD_DATA (ID, POSTER, SUBJECT, CONTENT) " +
                       " VALUES(BOARD_DATA_SEQ.nextval, ?, ?, ?)";
@@ -63,6 +66,13 @@ public class BoardDao {
         }
     }
 
+    public long getTotal() {
+        String sql = "SELECT COUNT(*) FROM BOARD_DATA";
+        long total = jdbcTemplate.queryForObject(sql, long.class);
+
+        return total;
+    }
+
     private BoardData mapper(ResultSet rs, int i) throws SQLException {
         return BoardData.builder()
                 .id(rs.getLong("ID"))
@@ -72,4 +82,5 @@ public class BoardDao {
                 .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
                 .build();
     }
+
 }
