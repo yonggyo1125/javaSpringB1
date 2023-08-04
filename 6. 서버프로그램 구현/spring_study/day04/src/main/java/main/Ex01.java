@@ -18,12 +18,16 @@ public class Ex01 {
                         .subject("제목2")
                         .content("내용2")
                         .build();
-        boolean result = boardDao.register(data);
-        System.out.println("결과 : " + result);
+        //boolean result = boardDao.register(data);
+        //System.out.println("결과 : " + result);
 
         // gets()
         List<BoardData> items = boardDao.gets();
         items.stream().forEach(System.out::println);
+
+        // get()
+        BoardData item = boardDao.get(25L);
+        System.out.println(item);
 
         ctx.close();
     }

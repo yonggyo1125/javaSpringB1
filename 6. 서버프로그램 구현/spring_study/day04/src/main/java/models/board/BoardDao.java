@@ -32,10 +32,13 @@ public class BoardDao {
     }
 
     public BoardData get(long id) {
-        String sql = "SELECT * FROM BOARD_DATA WHERE ID = ?";
-        BoardData data = jdbcTemplate.queryForObject(sql, this::mapper, id);
-
-        return data;
+        try {
+            String sql = "SELECT * FROM BOARD_DATA WHERE ID = ?";
+            BoardData data = jdbcTemplate.queryForObject(sql, this::mapper, id);
+            return data;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     private BoardData mapper(ResultSet rs, int i) throws SQLException {
