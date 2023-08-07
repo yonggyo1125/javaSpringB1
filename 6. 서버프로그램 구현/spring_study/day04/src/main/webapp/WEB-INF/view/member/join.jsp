@@ -48,6 +48,14 @@
         </dd>
     </dl>
     <dl>
+        <dt>주소</dt>
+        <dd>
+            <input type="text" name="address.zip">
+            <input type="text" name="address.addr1">
+            <input type="text" name="address.addr2">
+        </dd>
+    </dl>
+    <dl>
         <dt>약관 동의</dt>
         <dd>
             <input type="checkbox" name="agree" value="true" id="agree">

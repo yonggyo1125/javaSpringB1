@@ -13,5 +13,6 @@ public class JoinForm {
     private String email;
     private String mobile;
     private List<String> hobby;
+    private Address address;
     private boolean agree;
 }
