@@ -14,7 +14,7 @@ public class MemberController {
 
     @PostMapping("/member/join")
     public String joinPs() {
-
+        System.out.println("POST 유입!");
         return null;
     }
 }
