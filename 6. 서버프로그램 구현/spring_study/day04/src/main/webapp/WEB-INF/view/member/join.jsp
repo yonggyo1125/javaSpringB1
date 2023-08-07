@@ -37,4 +37,12 @@
             <input type="text" name="mobile">
         </dd>
     </dl>
+    <dl>
+        <dt>약관 동의</dt>
+        <dd>
+            <input type="checkbox" name="agree" value="true" id="agree">
+            <label for="agree">가입 약관에 동의합니다.</label>
+        </dd>
+    </dl>
+    <button type="submit">가입하기</button>
 </form>
