@@ -13,9 +13,9 @@ import java.util.Map;
 @RequestMapping("/member")
 public class MemberController {
     @GetMapping("/join") // /member/join
-    public String join() {
-
-        return "member/join"; // /WEB-INF/view/member/join.jsp
+    public String join(Model model) {
+        model.addAttribute("title", "변경된 제목!");
+        return "member/join"; // /WEB-INF/templates/member/join.html
     }
 
     @PostMapping("/join")
@@ -23,5 +23,13 @@ public class MemberController {
         System.out.println(joinForm);
 
         return "redirect:/member/login"; // 페이지 이동 응답헤더 : Location: 주소
+    }
+
+    @GetMapping("/info")
+    public String info(Model model) {
+
+
+
+        return "member/info"; // /WEB-INF/template/member/info.html
     }
 }
