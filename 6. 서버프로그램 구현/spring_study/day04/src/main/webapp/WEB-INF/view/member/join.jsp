@@ -38,6 +38,16 @@
         </dd>
     </dl>
     <dl>
+        <dt>취미</dt>
+        <dd>
+            <input type="checkbox" name="hobby" value="야구">야구
+            <input type="checkbox" name="hobby" value="축구">축구
+            <input type="checkbox" name="hobby" value="농구">농구
+            <input type="checkbox" name="hobby" value="피아노">피아노
+            <input type="checkbox" name="hobby" value="독서">독서
+        </dd>
+    </dl>
+    <dl>
         <dt>약관 동의</dt>
         <dd>
             <input type="checkbox" name="agree" value="true" id="agree">
