@@ -6,15 +6,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-    /*
-    @GetMapping("/hello")
-    public String hello() {
 
-        return "hello"; // /WEB-INF/view/hello.jsp
+    @GetMapping("/hello")
+    public String hello(String name, int num, boolean result) {
+        System.out.printf("name=%s, num=%d, result=%s%n", name, num, result);
+        return "hello";
     }
 
-     */
-
+    /*
     @GetMapping("/hello")
     public ModelAndView hello() {
         ModelAndView mv = new ModelAndView();
@@ -23,4 +22,5 @@ public class HelloController {
 
         return mv;
     }
+     */
 }
