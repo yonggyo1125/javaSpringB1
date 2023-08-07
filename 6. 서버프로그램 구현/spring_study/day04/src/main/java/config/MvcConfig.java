@@ -9,6 +9,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+        // URL 요청 적용 우선순위 : 컨트롤러 빈, 없으면 정적 경로에서 바로 접근
     }
 
     @Override
@@ -20,6 +21,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
+
         registry.jsp("/WEB-INF/view/", ".jsp");
     }
 }
