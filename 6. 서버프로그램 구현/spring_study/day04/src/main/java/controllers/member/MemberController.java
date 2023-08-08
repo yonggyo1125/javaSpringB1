@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/member")
@@ -73,5 +70,16 @@ public class MemberController {
         model.addAttribute("num", 10);
 
         return "member/info2";
+    }
+
+    @GetMapping("/info3")
+    public String info3(Model model) {
+        String[] addCss = {"member/test1", "member/test2" };
+        List<String> addScript = Arrays.asList("member/jstest1", "member/jstest2");
+
+        model.addAttribute("addCss", addCss);
+        model.addAttribute("addScript", addScript);
+
+        return "member/info3";
     }
 }
