@@ -3,6 +3,7 @@ package config;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
 public class DbConfig {
@@ -21,5 +22,10 @@ public class DbConfig {
         ds.setTimeBetweenEvictionRunsMillis(1000 * 3);
 
         return ds;
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
     }
 }
