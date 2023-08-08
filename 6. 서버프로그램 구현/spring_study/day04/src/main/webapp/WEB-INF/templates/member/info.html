@@ -7,13 +7,15 @@
     <a th:href="@{/member/info/{id}(id=${member.userId})}">회원정보2</a>
     <br>
     <div th:text="${#messages.msg('login.message', member.userNm, member.userId)}"></div>
+
+    <div th:text="${@cUtil.toUpper('abc')}"></div>
     <th:block th:object="${member}">
         <dl>
             <dt th:text="#{member.userNo}"></dt>
             <dd th:text="*{userNo}"></dd>
         </dl>
         <dl>
-            <dt th:text="#{member.userId}"></dt>
+            <dt th:text="${#messages.msgOrNull('userId')}"></dt>
             <dd>
                 [[*{userId}]]
             </dd>
@@ -36,7 +38,7 @@
         </dl>
         <dl>
             <dt th:text="#{member.regDt}"></dt>
-            <dd th:text="${member.regDt}"></dd>
+            <dd th:text="*{#temporals.format(regDt, 'yyyy.MM.dd')}"></dd>
         </dl>
     </th:block>
     </body>

@@ -43,4 +43,6 @@ public class MemberController {
 
         return "member/info"; // /WEB-INF/template/member/info.html
     }
+
+
 }

@@ -77,4 +77,9 @@ public class MvcConfig implements WebMvcConfigurer {
 
         return ms;
     }
+
+    @Bean
+    public CommonUtils cUtil() {
+        return new CommonUtils();
+    }
 }
