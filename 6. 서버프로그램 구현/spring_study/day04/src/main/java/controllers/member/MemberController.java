@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -44,5 +46,23 @@ public class MemberController {
         return "member/info"; // /WEB-INF/template/member/info.html
     }
 
+    @GetMapping("/list")
+    public String list(Model model) {
+        List<Member> members = new ArrayList<>();
 
+        for (int i = 1; i <= 10; i++) {
+            Member member = Member.builder()
+                    .userNo(i)
+                    .userId("user" + i)
+                    .userPw("12345678")
+                    .userNm("사용자" + i)
+                    .email("user" + i + "@test.org")
+                    .mobile("01000000000")
+                    .regDt(LocalDateTime.now())
+                    .build();
+            members.add(member);
+        }
+
+        return "member/list";
+    }
 }
