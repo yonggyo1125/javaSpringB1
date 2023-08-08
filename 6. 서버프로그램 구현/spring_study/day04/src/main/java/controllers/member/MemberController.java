@@ -63,6 +63,15 @@ public class MemberController {
             members.add(member);
         }
 
+        model.addAttribute("members", members);
         return "member/list";
+    }
+
+    @GetMapping("/info2")
+    public String info2(Model model) {
+        model.addAttribute("title", "<h1>제목</h1>");
+        model.addAttribute("num", 10);
+
+        return "member/info2";
     }
 }
