@@ -23,6 +23,14 @@ public class MvcConfig implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
 
     @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/")
+                .setViewName("main/index");
+
+        //registry.
+    }
+
+    @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
         // URL 요청 적용 우선순위 : 컨트롤러 빈, 없으면 정적 경로에서 바로 접근
