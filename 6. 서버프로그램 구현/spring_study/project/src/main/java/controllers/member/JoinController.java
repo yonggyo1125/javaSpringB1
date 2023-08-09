@@ -21,9 +21,13 @@ public class JoinController {
     }
 
     @PostMapping
-    public String joinPs(JoinForm joinForm, Errors errors) {
+    public String joinPs(JoinForm form, Errors errors) {
 
-        joinValidator.validate(joinForm, errors);
+        joinValidator.validate(form, errors);
+
+        if (errors.hasErrors()) {
+            return "member/join";
+        }
 
         return "redirect:/member/login";
     }

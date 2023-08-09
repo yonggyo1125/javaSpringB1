@@ -41,5 +41,10 @@ public class JoinValidator implements Validator {
         if (email == null || email.isBlank()) {
             errors.rejectValue("email", "Required", "이메일을 입력하세요.");
         }
+
+        boolean result = false;
+        if (!result) {
+            errors.reject("testError", "공통 오류 발생!!");
+        }
     }
 }
