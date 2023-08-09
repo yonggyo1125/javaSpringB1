@@ -1,13 +1,19 @@
 package controllers.member;
 
 import commons.validators.MobileValidator;
+import lombok.RequiredArgsConstructor;
+import models.members.MemberDao;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 @Component
+@RequiredArgsConstructor
 public class JoinValidator implements Validator, MobileValidator {
+
+    private final MemberDao memberDao;
+
     @Override
     public boolean supports(Class<?> clazz) { // 검증하고자 하는 커맨드 객체 제한
         return clazz.isAssignableFrom(JoinForm.class);
