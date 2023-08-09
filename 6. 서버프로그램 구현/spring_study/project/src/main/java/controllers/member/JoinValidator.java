@@ -33,6 +33,9 @@ public class JoinValidator implements Validator, MobileValidator {
         String mobile = joinForm.getMobile();
 
         // 1. 아이디 중복 여부 검사
+        if (memberDao.exists(userId)) {
+            errors.rejectValue("userId", "Duplicate");
+        }
 
         // 2. 비밀번호, 비밀번호 확인의 일치 여부
         if (!userPw.equals(userPwRe)) {
