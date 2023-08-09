@@ -4,7 +4,45 @@
       layout:decorate="~{layouts/main}">
 
 <main layout:fragment="content">
-    <h1>로그인</h1>
+    <h1>회원가입</h1>
+    <form method="POST" action="@{/member/join}">
+        <dl>
+            <dt>아이디</dt>
+            <dd>
+                <input type="text" name="userId">
+            </dd>
+        </dl>
+        <dl>
+            <dt>비밀번호</dt>
+            <dd>
+                <input type="password" name="userPw">
+            </dd>
+        </dl>
+        <dl>
+            <dt>비밀번호확인</dt>
+            <dd>
+                <input type="password" name="userPwRe">
+            </dd>
+        </dl>
+        <dl>
+            <dt>회원명</dt>
+            <dd>
+                <input type="text" name="userNm">
+            </dd>
+        </dl>
+        <dl>
+            <dt>이메일</dt>
+            <dd>
+                <input type="text" name="email">
+            </dd>
+        </dl>
+        <dl>
+            <dt>휴대전화번호</dt>
+            <dd>
+                <input type="text" name="mobile">
+            </dd>
+        </dl>
+    </form>
 </main>
 
 </html>
