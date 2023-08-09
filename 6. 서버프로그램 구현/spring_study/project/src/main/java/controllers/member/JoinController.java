@@ -2,10 +2,9 @@ package controllers.member;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import models.members.JoinService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class JoinController {
 
-    private final JoinValidator joinValidator;
+    private final JoinService joinService;
 
     @GetMapping
     public String join(@ModelAttribute JoinForm form) {
@@ -24,7 +23,7 @@ public class JoinController {
     @PostMapping
     public String joinPs(@Valid JoinForm form, Errors errors) {
 
-        joinValidator.validate(form, errors);
+        joinService.join(form, errors);
 
         if (errors.hasErrors()) {
             return "member/join";
