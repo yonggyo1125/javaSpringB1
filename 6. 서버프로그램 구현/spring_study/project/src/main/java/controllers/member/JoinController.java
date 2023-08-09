@@ -1,11 +1,12 @@
 package controllers.member;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member/join")
@@ -15,15 +16,15 @@ public class JoinController {
     private final JoinValidator joinValidator;
 
     @GetMapping
-    public String join() {
+    public String join(@ModelAttribute JoinForm form) {
 
         return "member/join";
     }
 
     @PostMapping
-    public String joinPs(JoinForm form, Errors errors) {
+    public String joinPs(@Valid JoinForm form, Errors errors) {
 
-        joinValidator.validate(form, errors);
+       // joinValidator.validate(form, errors);
 
         if (errors.hasErrors()) {
             return "member/join";
@@ -31,4 +32,12 @@ public class JoinController {
 
         return "redirect:/member/login";
     }
+
+    // 컨트롤러 수준의 공통 Validator()
+    /*
+    @InitBinder
+    public void InitBinder(WebDataBinder binder) {
+        binder.setValidator(joinValidator);
+    }
+     */
 }
