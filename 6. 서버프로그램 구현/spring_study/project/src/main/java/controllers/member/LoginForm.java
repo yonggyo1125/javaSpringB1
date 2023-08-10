@@ -9,4 +9,6 @@ public class LoginForm {
     private String userId;
     @NotBlank
     private String userPw;
+
+    private boolean saveId;
 }

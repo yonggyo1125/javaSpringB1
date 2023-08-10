@@ -85,4 +85,10 @@ public class MvcConfig implements WebMvcConfigurer {
 
         return ms;
     }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/")
+                .setViewName("main/index");
+    }
 }

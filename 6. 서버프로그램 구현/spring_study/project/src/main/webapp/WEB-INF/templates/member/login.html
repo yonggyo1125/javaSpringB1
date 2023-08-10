@@ -16,10 +16,14 @@
         <dl>
             <dt>비밀번호</dt>
             <dd>
-                <input type="text" name="userPw" th:field="*{userPw}">
+                <input type="password" name="userPw" th:field="*{userPw}">
                 <div th:each="err : ${#fields.errors('userPw')}" th:text="${err}"></div>
             </dd>
         </dl>
+        <div>
+            <input type="checkbox" name="saveId" value="true" id="saveId" th:field="*{saveId}">
+            <label for="saveId">아이디 저장</label>
+        </div>
         <button type="submit">로그인</button>
     </form>
 </main>

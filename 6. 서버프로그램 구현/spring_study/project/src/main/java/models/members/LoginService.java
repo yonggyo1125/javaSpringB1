@@ -1,6 +1,8 @@
 package models.members;
 
 import controllers.member.LoginForm;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,7 @@ public class LoginService {
 
     private final LoginValidator loginValidator;
     private final HttpSession session;
+    private final HttpServletResponse response;
     private final MemberDao memberDao;
 
     public void login(LoginForm loginForm, Errors errors) {
@@ -26,5 +29,15 @@ public class LoginService {
         String userId = loginForm.getUserId();
         Member member = memberDao.get(userId);
         session.setAttribute("member", member);
+
+        // 아이디 저장 처리
+        Cookie cookie = new Cookie("saveId", userId);
+        if (loginForm.isSaveId()) { // 쿠키 저장
+            cookie.setMaxAge(60 * 60 * 24 * 365);
+        } else { // 쿠키 제거
+            cookie.setMaxAge(0);
+        }
+
+        response.addCookie(cookie);
     }
 }
