@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import models.members.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member/login")
@@ -18,7 +15,11 @@ public class LoginController {
     private final LoginService loginService;
 
     @GetMapping
-    public String login(@ModelAttribute LoginForm loginForm) {
+    public String login(@ModelAttribute LoginForm loginForm, @CookieValue(required = false) String saveId) {
+        if (saveId != null) { // 저장된 userId가 있는 경우
+            loginForm.setSaveId(true);
+            loginForm.setUserId(saveId);
+        }
 
         return "member/login";
     }

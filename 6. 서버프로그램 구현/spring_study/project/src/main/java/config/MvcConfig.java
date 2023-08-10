@@ -1,5 +1,6 @@
 package config;
 
+import interceptors.MemberOnlyInterceptor;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -90,5 +91,19 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/")
                 .setViewName("main/index");
+
+        registry.addViewController("/mypage")
+                .setViewName("mypage/index");
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(memberOnlyInterceptor())
+                .addPathPatterns("/mypage/**");
+    }
+
+    @Bean
+    public MemberOnlyInterceptor memberOnlyInterceptor() {
+        return new MemberOnlyInterceptor();
     }
 }
