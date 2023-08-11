@@ -24,4 +24,10 @@ public class BoardSaveServiceTest {
             saveService.save(data);
         });
     }
+
+    @Test
+    @DisplayName("필수 항목(poster, subject, content) 검증, 검증 실패 BoardValidationException 발생")
+    void requiredFieldsTest() {
+
+    }
 }
