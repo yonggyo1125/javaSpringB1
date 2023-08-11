@@ -84,7 +84,19 @@ public class BoardSaveServiceTest {
                     requiredFieldTestEach(boardData, "내용");
                 }
         );
+    }
 
+    @Test
+    @DisplayName("저장전 데이터와 저장된 데이터의 일치 여부")
+    void saveResultTest() {
+        saveService.save(boardData);
+        BoardDataForm result = infoService.get(boardData.getId());
+
+        assertAll(
+                () -> assertEquals(boardData.getPoster(), result.getPoster()),
+                () -> assertEquals(boardData.getSubject(), result.getSubject()),
+                () -> assertEquals(boardData.getContent(), result.getContent())
+        );
     }
 
     private void requiredFieldTestEach(BoardDataForm data, String message) {
