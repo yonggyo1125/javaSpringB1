@@ -19,6 +19,7 @@ public class JPAEx1 {
     @Test
     void test1() {
         Users users = new Users();
+        users.setUserNo(1L);
         users.setUserId("user01");
         users.setUserPw("12345678");
         users.setUserNm("사용자01");
