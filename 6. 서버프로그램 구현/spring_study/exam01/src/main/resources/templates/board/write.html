@@ -1,2 +1,29 @@
-게시글 쓰기!11122223333
-4444
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<main layout:fragment="content">
+    <form method="post" th:action="@{/board/write}">
+        <dl>
+            <dt>작성자</dt>
+            <dd>
+                <input type="text" name="poster">
+            </dd>
+        </dl>
+        <dl>
+            <dt>제목</dt>
+            <dd>
+                <input type="text" name="subject">
+            </dd>
+        </dl>
+        <dl>
+            <dt>내용</dt>
+            <dd>
+                <textarea name="content"></textarea>
+            </dd>
+        </dl>
+        <button type="submit">작성하기</button>
+    </form>
+</main>
+</html>
