@@ -4,7 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.koreait.controllers.board.BoardDataForm;
+import org.koreait.models.board.BoardData;
 import org.koreait.models.board.BoardValidationException;
+import org.koreait.models.board.InfoService;
 import org.koreait.models.board.SaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +19,9 @@ public class BoardSaveServiceTest {
 
     @Autowired
     private SaveService saveService;
+
+    @Autowired
+    private InfoService infoService;
 
     private BoardDataForm boardData;
 
@@ -90,7 +95,7 @@ public class BoardSaveServiceTest {
     @DisplayName("저장전 데이터와 저장된 데이터의 일치 여부")
     void saveResultTest() {
         saveService.save(boardData);
-        BoardDataForm result = infoService.get(boardData.getId());
+        BoardData result = infoService.get(boardData.getId());
 
         assertAll(
                 () -> assertEquals(boardData.getPoster(), result.getPoster()),
