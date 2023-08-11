@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.koreait.controllers.board.BoardDataForm;
+import org.koreait.models.board.BoardValidationException;
 import org.koreait.models.board.SaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,10 +22,16 @@ public class BoardSaveServiceTest {
 
     @BeforeEach
     void init() {
-        boardData = new BoardDataForm();
+        boardData = getData();
+    }
+
+    private BoardDataForm getData() {
+        BoardDataForm boardData = new BoardDataForm();
         boardData.setPoster("작성자");
         boardData.setSubject("제목");
         boardData.setContent("내용");
+
+        return boardData;
     }
 
     @Test
@@ -38,6 +45,9 @@ public class BoardSaveServiceTest {
     @Test
     @DisplayName("필수 항목(poster, subject, content) 검증, 검증 실패 BoardValidationException 발생")
     void requiredFieldsTest() {
-
+        /** poster 필수 검증(null, 빈 값) */
+        assertThrows(BoardValidationException.class, () -> {
+            // setPoster(null)
+        });
     }
 }
