@@ -10,11 +10,13 @@ import org.koreait.models.board.InfoService;
 import org.koreait.models.board.SaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @DisplayName("게시글 저장 서비스 테스트")
+@Transactional // 테스트시에는 추가된 데이터를 다시 롤백
 public class BoardSaveServiceTest {
 
     @Autowired
