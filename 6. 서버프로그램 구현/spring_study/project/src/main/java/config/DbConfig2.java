@@ -9,7 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class DbConfig2 {
 
-    @Profile("dev")
+    //@Profile("dev,dev2") // dev, dev2 프로필
+    @Profile("!real") // real 아닌 프로필
     @Configuration
     static class DbConfigDev {
         @Bean(destroyMethod = "close")
