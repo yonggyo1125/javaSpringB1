@@ -3,6 +3,7 @@ package config;
 import interceptors.MemberOnlyInterceptor;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -32,6 +33,12 @@ public class MvcConfig implements WebMvcConfigurer {
     }
      */
 
+    @Value("${env}")
+    private String env;
+
+    @Value("${file.upload.path}")
+    private String fileUploadPath;
+
     @Autowired
     private ApplicationContext applicationContext;
 
@@ -46,7 +53,7 @@ public class MvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/");
 
         registry.addResourceHandler("/upload/**")
-                .addResourceLocations("file:///D:/uploads/");
+                .addResourceLocations("file:///" + fileUploadPath);
     }
 
     @Bean
@@ -55,7 +62,7 @@ public class MvcConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
-        templateResolver.setCacheable(false); // 캐시 여부
+        templateResolver.setCacheable(env.equals("real")?true:false); // 캐시 여부
         return templateResolver;
     }
 
