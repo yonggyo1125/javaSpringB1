@@ -4,13 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.koreait.controllers.board.BoardDataForm;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Repository
 @RequiredArgsConstructor
@@ -49,5 +48,28 @@ public class BoardDataDao {
         data.setId(id);
 
         return affectedRows > 0;
+    }
+
+    public BoardData get(long id) {
+        try {
+            String sql = "SELECT * FROM BOARD_DATA WHERE ID = ?";
+            BoardData data = jdbcTemplate.queryForObject(sql, this::mapper, id);
+
+            return data;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public BoardData mapper(ResultSet rs, int i) throws SQLException {
+        Timestamp modDt = rs.getTimestamp("MODDT");
+        return BoardData.builder()
+                .id(rs.getLong("ID"))
+                .poster(rs.getString("POSTER"))
+                .subject(rs.getString("SUBJECT"))
+                .content(rs.getString("CONTENT"))
+                .regDt(rs.getTimestamp("REGDT").toLocalDateTime())
+                .modDt(modDt == null ? null : modDt.toLocalDateTime())
+                .build();
     }
 }
