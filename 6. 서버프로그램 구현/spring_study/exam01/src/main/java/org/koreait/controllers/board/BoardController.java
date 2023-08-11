@@ -19,7 +19,7 @@ public class BoardController {
     private final InfoService infoService;
 
     @GetMapping("/write")
-    public String write() {
+    public String write(@ModelAttribute BoardDataForm data) {
 
         return "board/write";
     }
