@@ -28,6 +28,7 @@ public class BoardDataDao {
                     " CONTENT = ?, " +
                     " MODDT = SYSDATE " +
                     " WHERE ID = ?";
+             affectedRows = jdbcTemplate.update(sql, data.getPoster(), data.getSubject(), data.getContent(), data.getId());
         } else { // 추가
             String sql = "INSERT INTO BOARD_DATA (ID, POSTER, SUBJECT, CONTENT) " +
                     " VALUES (BOARD_DATA_SEQ.nextval, ?, ?, ?)";
