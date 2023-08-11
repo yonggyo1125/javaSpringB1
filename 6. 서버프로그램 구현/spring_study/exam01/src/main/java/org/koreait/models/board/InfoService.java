@@ -11,6 +11,11 @@ public class InfoService {
 
     public BoardData get(long id) {
 
-        return boardDataDao.get(id);
+        BoardData data = boardDataDao.get(id);
+        if (data == null) {
+            throw new BoardDataNotFoundException();
+        }
+
+        return data;
     }
 }
