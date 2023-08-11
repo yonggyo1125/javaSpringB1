@@ -9,15 +9,25 @@ import org.koreait.models.board.BoardValidationException;
 import org.koreait.models.board.InfoService;
 import org.koreait.models.board.SaveService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 @DisplayName("게시글 저장 서비스 테스트")
 @Transactional // 테스트시에는 추가된 데이터를 다시 롤백
 public class BoardSaveServiceTest {
+
+    @Autowired
+    private MockMvc mockMvc;
 
     @Autowired
     private SaveService saveService;
@@ -111,5 +121,31 @@ public class BoardSaveServiceTest {
             saveService.save(data);
         });
         assertTrue(thrown.getMessage().contains(message));
+    }
+
+    @Test
+    @DisplayName("(통합)저장 성공시 게시글 보기 페이지 이동")
+    void saveSuccessControllerTest() throws Exception {
+        mockMvc.perform(post("/board/save")
+                        .param("poster", boardData.getPoster())
+                        .param("subject", boardData.getSubject())
+                        .param("content", boardData.getContent()))
+                        .andExpect(status().is(302))
+                        .andExpect(header().exists("Location"));
+    }
+
+    @Test
+    @DisplayName("필수 항목 검증(Bean Validation), 작성자, 제목, 내용 포함 여부")
+    void requiredFieldControllerTest() throws Exception {
+        String body = mockMvc.perform(post("/board/save"))
+                        .andDo(print())
+                        .andReturn().getResponse().getContentAsString(); // Body 데이터
+
+        assertAll(
+                ()-> assertTrue(body.contains("작성자를 입력")),
+                ()-> assertTrue(body.contains("제목을 입력")),
+                ()-> assertTrue(body.contains("내용을 입력"))
+        );
+
     }
 }
