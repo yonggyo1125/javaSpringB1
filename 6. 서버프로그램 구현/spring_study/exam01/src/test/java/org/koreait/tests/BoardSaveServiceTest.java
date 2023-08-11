@@ -45,9 +45,52 @@ public class BoardSaveServiceTest {
     @Test
     @DisplayName("필수 항목(poster, subject, content) 검증, 검증 실패 BoardValidationException 발생")
     void requiredFieldsTest() {
-        /** poster 필수 검증(null, 빈 값) */
-        assertThrows(BoardValidationException.class, () -> {
-            // setPoster(null)
+
+        assertAll(
+                () -> {
+                    // poster가 null
+                    boardData = getData();
+                    boardData.setPoster(null);
+                    requiredFieldTestEach(boardData, "작성자");
+                },
+                () -> {
+                    // poster가 빈값
+                    boardData = getData();
+                    boardData.setPoster("     ");
+                    requiredFieldTestEach(boardData, "작성자");
+                },
+                () -> {
+                    // subject가 null
+                    boardData = getData();
+                    boardData.setSubject(null);
+                    requiredFieldTestEach(boardData, "제목");
+                },
+                () -> {
+                    // subject가 빈값
+                    boardData = getData();
+                    boardData.setSubject("     ");
+                    requiredFieldTestEach(boardData, "제목");
+                },
+                () -> {
+                    // content가 null
+                    boardData = getData();
+                    boardData.setContent(null);
+                    requiredFieldTestEach(boardData, "내용");
+                },
+                () -> {
+                    // content가 빈값
+                    boardData = getData();
+                    boardData.setContent("    ");
+                    requiredFieldTestEach(boardData, "내용");
+                }
+        );
+
+    }
+
+    private void requiredFieldTestEach(BoardDataForm data, String message) {
+        BoardValidationException thrown = assertThrows(BoardValidationException.class, () -> {
+            saveService.save(data);
         });
+        assertTrue(thrown.getMessage().contains(message));
     }
 }
