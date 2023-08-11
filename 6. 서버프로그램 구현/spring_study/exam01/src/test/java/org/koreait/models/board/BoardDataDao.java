@@ -41,6 +41,12 @@ public class BoardDataDao {
 
                 return pstmt;
             }, keyHolder);
+
+            id = keyHolder.getKey().longValue();
         }
+
+        data.setId(id);
+
+        return affectedRows > 0;
     }
 }
