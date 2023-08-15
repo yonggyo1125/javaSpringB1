@@ -1,5 +1,7 @@
 package org.koreait.configs;
 
+import org.koreait.models.member.LoginFailureHandler;
+import org.koreait.models.member.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,8 +18,8 @@ public class SecurityConfig {
             f.loginPage("/member/login")
                     .usernameParameter("userId")
                     .passwordParameter("userPw")
-                    .successForwardUrl("/")
-                    .failureForwardUrl("/member/login?status=fail");
+                    .successHandler(new LoginSuccessHandler())
+                    .failureHandler(new LoginFailureHandler());
         });
 
         http.logout(f -> {

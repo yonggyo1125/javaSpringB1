@@ -12,6 +12,9 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
+        String userId = request.getParameter("userId");
+        String userPw = request.getParameter("userPw");
+
 
         // 로그인 실패시 -> 로그인 페이지
         response.sendRedirect(request.getContextPath() + "/member/login");
