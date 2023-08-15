@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
             @Index(name="idx_regdt_desc", columnList = "regDt DESC"),
                 @Index(name="idx_email_mobile", columnList = "email, mobile")
         })
-public class Users {
+public class Users extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userNo;
 
@@ -40,12 +40,4 @@ public class Users {
     @Enumerated(EnumType.STRING)
     @Column(length=10, nullable = false)
     private UserType userType = UserType.MEMBER;
-
-    @CreationTimestamp
-    @Column(updatable = false)
-    private LocalDateTime regDt;
-
-    @UpdateTimestamp
-    @Column(insertable = false)
-    private LocalDateTime modDt;
 }

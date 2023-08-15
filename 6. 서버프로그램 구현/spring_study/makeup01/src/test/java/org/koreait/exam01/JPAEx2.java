@@ -33,6 +33,8 @@ public class JPAEx2 {
 
         users = em.find(Users.class, users.getUserNo());
         System.out.println(users);
+        System.out.println("regDt : " + users.getRegDt());
+        System.out.println("modDt : " + users.getModDt());
 
         try {
             Thread.sleep(3000);
@@ -45,6 +47,8 @@ public class JPAEx2 {
 
         users = em.find(Users.class, users.getUserNo());
         System.out.println(users);
+        System.out.println("regDt : " + users.getRegDt());
+        System.out.println("modDt : " + users.getModDt());
     }
 
     @Test
