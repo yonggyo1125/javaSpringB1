@@ -5,10 +5,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.koreait.controllers.board.BoardDataForm;
 import org.koreait.models.board.BoardData;
+import org.koreait.models.board.InfoService;
 import org.koreait.models.board.SaveService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,17 +25,13 @@ import java.util.stream.Collectors;
 public class BoardApiController {
 
     private final SaveService saveService;
+    private final InfoService infoService;
 
-    @GetMapping("/info")
-    public BoardData info() {
-        BoardData data = BoardData.builder()
-                .id(1L)
-                .subject("제목1")
-                .content("내용1")
-                .poster("작성자1")
-                .regDt(LocalDateTime.now())
-                .build();
-        return data;
+    @GetMapping("/info/{id}")
+    public ResponseEntity<BoardData> info(@PathVariable long id) {
+        BoardData data = infoService.get(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(data);
     }
 
     @GetMapping("/list")
@@ -61,16 +61,18 @@ public class BoardApiController {
     }
 
     @PostMapping("/register")
-    public void register(@RequestBody @Valid BoardDataForm form, Errors errors) {
+    public ResponseEntity<BoardData> register(@RequestBody @Valid BoardDataForm form, Errors errors) {
         if (errors.hasErrors()) {
             String errMessage = errors.getAllErrors()
                                     .stream()
                                     .map(e -> e.getDefaultMessage())
                                     .collect(Collectors.joining(","));
             log.info(errMessage);
-            return;
         }
 
         saveService.save(form);
+
+        //return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.created(URI.create("/board/list")).build(); // 201
     }
 }
