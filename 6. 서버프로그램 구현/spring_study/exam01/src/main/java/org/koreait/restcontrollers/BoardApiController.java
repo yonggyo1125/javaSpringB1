@@ -3,6 +3,7 @@ package org.koreait.restcontrollers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.koreait.commons.CommonException;
 import org.koreait.commons.JSONData;
 import org.koreait.controllers.board.BoardDataForm;
 import org.koreait.models.board.BoardData;
@@ -82,7 +83,7 @@ public class BoardApiController {
                                     .stream()
                                     .map(e -> e.getDefaultMessage())
                                     .collect(Collectors.joining(","));
-            throw new RuntimeException(errMessage);
+            throw new CommonException(errMessage, HttpStatus.BAD_REQUEST);
         }
 
 
@@ -101,6 +102,12 @@ public class BoardApiController {
         JSONData<Object> jsonData = new JSONData<>();
         jsonData.setMessage(e.getMessage());
 
-        return ResponseEntity.status(500).body(jsonData);
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        if (e instanceof CommonException) {
+            CommonException e2 = (CommonException)e;
+            status = e2.getStatus();
+        }
+
+        return ResponseEntity.status(status).body(jsonData);
     }
 }
