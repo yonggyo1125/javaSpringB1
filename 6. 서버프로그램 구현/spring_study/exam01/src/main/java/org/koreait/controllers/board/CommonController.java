@@ -30,6 +30,7 @@ public class CommonController {
         model.addAttribute("path", request.getRequestURI());
         model.addAttribute("method", request.getMethod());
         model.addAttribute("timestamp", LocalDateTime.now().toString());
+        response.setStatus(statusCode);
 
         return "error/common";
     }
