@@ -78,6 +78,7 @@ public class BoardApiController {
     @PostMapping("/register")
     public ResponseEntity<JSONData<Object>> register(@RequestBody @Valid BoardDataForm form, Errors errors) {
         JSONData<Object> jsonData = new JSONData<>();
+        /*
         if (errors.hasErrors()) {
             String errMessage = errors.getAllErrors()
                                     .stream()
@@ -85,7 +86,7 @@ public class BoardApiController {
                                     .collect(Collectors.joining(","));
             throw new CommonException(errMessage, HttpStatus.BAD_REQUEST);
         }
-
+        */
 
         saveService.save(form);
 
