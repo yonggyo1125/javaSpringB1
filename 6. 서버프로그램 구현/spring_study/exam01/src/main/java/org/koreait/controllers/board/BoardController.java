@@ -46,6 +46,14 @@ public class BoardController {
         return "board/view";
     }
 
+    @ResponseBody
+    @GetMapping("/viewapi/{id}")
+    public BoardData viewJson(@PathVariable long id) {
+        BoardData data = infoService.get(id);
+
+        return data;
+    }
+
     @ExceptionHandler(RuntimeException.class)
     public String errorHandler(RuntimeException e, Model model) {
 

@@ -1,18 +1,18 @@
 package org.koreait.restcontrollers;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.koreait.controllers.board.BoardDataForm;
 import org.koreait.models.board.BoardData;
 import org.koreait.models.board.SaveService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -61,7 +61,16 @@ public class BoardApiController {
     }
 
     @PostMapping("/register")
-    public void register(BoardDataForm form) {
+    public void register(@RequestBody @Valid BoardDataForm form, Errors errors) {
+        if (errors.hasErrors()) {
+            String errMessage = errors.getAllErrors()
+                                    .stream()
+                                    .map(e -> e.getDefaultMessage())
+                                    .collect(Collectors.joining(","));
+            log.info(errMessage);
+            return;
+        }
+
         saveService.save(form);
     }
 }
