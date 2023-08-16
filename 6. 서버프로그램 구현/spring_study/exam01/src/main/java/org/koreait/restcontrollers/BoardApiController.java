@@ -97,7 +97,7 @@ public class BoardApiController {
         //return ResponseEntity.status(HttpStatus.CREATED).build();
         //return ResponseEntity.created(URI.create("/board/list")).build(); // 201
     }
-
+    /*
     @ExceptionHandler(Exception.class)
     public ResponseEntity<JSONData<Object>> errorHandler(Exception e) {
         JSONData<Object> jsonData = new JSONData<>();
@@ -111,4 +111,5 @@ public class BoardApiController {
 
         return ResponseEntity.status(status).body(jsonData);
     }
+     */
 }
