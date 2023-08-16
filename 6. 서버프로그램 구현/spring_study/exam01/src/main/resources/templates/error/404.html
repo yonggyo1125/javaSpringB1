@@ -4,9 +4,6 @@
       layout:decorate="~{layouts/main}">
 
 <main layout:fragment="content">
-    <h1 th:text="${status}"></h1>
-    <h2 th:text="${message}"></h2>
-    <h2 th:text="${path}"></h2>
-    <h2 th:text="${timestamp}"></h2>
+    <th:block th:replace="~{error/_message::common}"></th:block>
 </main>
 </html>
