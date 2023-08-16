@@ -1,14 +1,24 @@
 package org.koreait.configs;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.koreait.models.member.LoginFailureHandler;
 import org.koreait.models.member.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import java.io.IOException;
 
 @Configuration
 public class SecurityConfig {
@@ -36,7 +46,25 @@ public class SecurityConfig {
                     .anyRequest().permitAll(); // 나머지 경로는 전부 접근 가능
         });
 
+        /* 페이지 접근 권한 없는 경우 상세 설정 */
+        http.exceptionHandling(f -> {
+           f.authenticationEntryPoint((req, res, e) ->  {
+               String URI = req.getRequestURI();
+               if (URI.indexOf("/mypage") != -1) { // mypage -> login
+                    res.sendRedirect(req.getContextPath() + "/member/login");
+               } else if (URI.indexOf("/admin") != -1) { // 관리자 페이지 401
+                   res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "NOT AUTHORIZED");
+               }
+           });
+        });
+
         return http.build();
+    }
+
+    /** Security 설정 배제 */
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return w -> w.ignoring().requestMatchers("/css/**", "/js/**", "/images/**");
     }
 
     @Bean

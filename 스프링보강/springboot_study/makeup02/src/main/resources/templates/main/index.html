@@ -1,1 +1,21 @@
-메인페이지
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta name="_csrf" th:content="${_csrf.token}">
+        <meta name="_csrf_header" th:content="${_csrf.headerName}">
+    </head>
+    <body>
+        <th:block sec:authorize="isAnonymous()">
+            <a th:href="@{/member/login}">로그인</a>
+            <a th:href="@{/member/join}">회원가입</a>
+        </th:block>
+        <th:block sec:authorize="isAuthenticated()">
+            [[${session.memberInfo.userNm}]]([[${session.memberInfo.userId}]])님 로그인...
+            <a th:href="@{/member/logout}">로그아웃</a>
+
+            <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin}">사이트 관리</a>
+
+        </th:block>
+    </body>
+</html>
