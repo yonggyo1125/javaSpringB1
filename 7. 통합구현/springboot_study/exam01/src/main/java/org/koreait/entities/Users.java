@@ -11,6 +11,11 @@ import java.time.LocalDateTime;
 @Entity
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
+@Table(name="MEMBER",
+    indexes = {
+        @Index(name="idx_Users_regDt", columnList = "regDt DESC"),
+            @Index(name="idx_Users_userNm", columnList = "userNm")
+    })
 public class Users {
     @Id
     private Long userNo;
