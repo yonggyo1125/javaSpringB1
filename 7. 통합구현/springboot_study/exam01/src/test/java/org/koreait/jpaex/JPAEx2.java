@@ -37,6 +37,8 @@ public class JPAEx2 {
         } catch (InterruptedException e) {}
 
         user1.setUserNm("(수정)사용자01");
+        em.flush();
+        em.clear();
         Users user2 = em.find(Users.class, 1L);
         System.out.println(user2);
     }
