@@ -22,14 +22,20 @@ import java.time.LocalDateTime;
 public class Users extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userNo;
-    @Column(name="memId")
+   //@Column(name="memId")
+    @Column(length=45, unique = true, nullable = false)
     private String userId;
+
+    @Column(length=65, nullable = false)
     private String userPw;
+
+    @Column(length=45, nullable = false)
     private String userNm;
     //@Lob
     @Transient
     private String intro;
 
     @Enumerated(EnumType.STRING)
+    @Column(length=10, nullable = false)
     private UserType type = UserType.USER;
 }
