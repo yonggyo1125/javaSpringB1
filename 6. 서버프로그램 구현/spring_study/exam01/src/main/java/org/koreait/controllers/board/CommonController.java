@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
 
-@ControllerAdvice
+@ControllerAdvice("org.koreait.controllers")
 public class CommonController {
 
     @ExceptionHandler(Exception.class)
