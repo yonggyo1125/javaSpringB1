@@ -29,7 +29,7 @@ public class JPAEx1 {
                 .build();
         em.persist(user);
         em.flush();
-        em.clear();
+        //em.clear();
     }
 
     @Test
@@ -68,4 +68,17 @@ public class JPAEx1 {
         System.out.println(user2);
     }
 
+    @Test
+    void test3() {
+        Users user = em.find(Users.class, 1L);
+        System.out.println(user);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {}
+
+        user.setUserNm("(수정)사용자01");
+        Users user2 = em.find(Users.class, 1L);
+        System.out.println(user2);
+    }
 }
