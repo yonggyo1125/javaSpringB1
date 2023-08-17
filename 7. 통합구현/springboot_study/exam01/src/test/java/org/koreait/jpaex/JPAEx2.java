@@ -3,6 +3,7 @@ package org.koreait.jpaex;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
+import org.koreait.constants.UserType;
 import org.koreait.entities.Users;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
@@ -23,7 +24,7 @@ public class JPAEx2 {
                 .userId("user01")
                 .userPw("123456")
                 .userNm("사용자01")
-                .regDt(LocalDateTime.now())
+               // .regDt(LocalDateTime.now())
                 .build();
         em.persist(user);
         em.flush();
@@ -31,6 +32,7 @@ public class JPAEx2 {
 
         Users user1 = em.find(Users.class, 1L);
         System.out.println(user1);
+        System.out.printf("regDt:%s, modDt:%s%n", user1.getRegDt(), user1.getModDt());
 
         try {
             Thread.sleep(3000);
@@ -41,5 +43,19 @@ public class JPAEx2 {
         em.clear();
         Users user2 = em.find(Users.class, 1L);
         System.out.println(user2);
+        System.out.printf("regDt:%s, modDt:%s%n", user2.getRegDt(), user2.getModDt());
+    }
+
+    @Test
+    void test2() {
+        Users user = Users.builder()
+                .userId("user01")
+                .userPw("123456")
+                .userNm("사용자01")
+                .type(UserType.ADMIN)
+                //.regDt(LocalDateTime.now())
+                .build();
+        em.persist(user);
+        em.flush();
     }
 }

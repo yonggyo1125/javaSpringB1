@@ -25,7 +25,7 @@ public class JPAEx1 {
                 .userId("user01")
                 .userPw("123456")
                 .userNm("사용자01")
-                .regDt(LocalDateTime.now())
+               // .regDt(LocalDateTime.now())
                 .build();
         em.persist(user);
         em.flush();
@@ -39,7 +39,7 @@ public class JPAEx1 {
                 .userId("user01")
                 .userPw("123456")
                 .userNm("사용자01")
-                .regDt(LocalDateTime.now())
+               // .regDt(LocalDateTime.now())
                 .build();
 
         em.persist(user); // 영속 상태 : 변화감지

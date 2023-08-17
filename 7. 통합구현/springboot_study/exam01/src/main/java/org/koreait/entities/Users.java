@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.koreait.constants.UserType;
 
 import java.time.LocalDateTime;
 
@@ -18,18 +19,17 @@ import java.time.LocalDateTime;
         @Index(name="idx_Users_regDt", columnList = "regDt DESC"),
             @Index(name="idx_Users_userNm", columnList = "userNm")
     })
-public class Users {
+public class Users extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userNo;
+    @Column(name="memId")
     private String userId;
     private String userPw;
     private String userNm;
-    @Lob
+    //@Lob
+    @Transient
     private String intro;
 
-    @CreationTimestamp
-    private LocalDateTime regDt;
-
-    @UpdateTimestamp
-    private LocalDateTime modDt;
+    @Enumerated(EnumType.STRING)
+    private UserType type = UserType.USER;
 }
