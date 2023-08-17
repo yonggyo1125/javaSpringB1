@@ -1,6 +1,7 @@
 package org.koreait.jpaex;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.koreait.constants.UserType;
 import org.koreait.entities.Users;
 import org.koreait.repositories.UsersRepository;
@@ -36,6 +37,13 @@ public class JPAEx3 {
 
     @Test
     void test1() {
+        List<Users> users = usersRepository.findAll();
+        users.stream().forEach(System.out::println);
+    }
 
+    @Test
+    void test2() {
+        Users user = usersRepository.findById(1L).orElse(null);
+        System.out.println(user);
     }
 }
