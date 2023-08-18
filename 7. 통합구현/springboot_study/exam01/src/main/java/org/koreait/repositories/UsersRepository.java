@@ -3,12 +3,13 @@ package org.koreait.repositories;
 import org.koreait.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface UsersRepository extends JpaRepository<Users, Long> {
+public interface UsersRepository extends JpaRepository<Users, Long>, QuerydslPredicateExecutor<Users> {
     Users findByUserId(String userId);
 
     List<Users> findByRegDtBetweenOrderByRegDtDesc(LocalDateTime sdate, LocalDateTime edate);
