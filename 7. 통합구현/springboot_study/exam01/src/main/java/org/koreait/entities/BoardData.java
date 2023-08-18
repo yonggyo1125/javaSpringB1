@@ -3,6 +3,9 @@ package org.koreait.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
@@ -26,4 +29,7 @@ public class BoardData extends BaseEntity {
     @JoinColumn(name="user_no")
     @ToString.Exclude
     private Users user;
+
+    @ManyToMany
+    private List<HashTag> tags = new ArrayList<>();
 }
