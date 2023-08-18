@@ -19,4 +19,8 @@ public interface UsersRepository extends JpaRepository<Users, Long>, QuerydslPre
 
     @Query("SELECT u FROM Users u WHERE u.userNm LIKE %:key% ORDER BY u.regDt DESC")
     List<Users> getUsers1(@Param("key") String keyword);
+
+    default List<Users> getUsers2(String keyword) {
+
+    }
 }
