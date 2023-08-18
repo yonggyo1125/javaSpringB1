@@ -1,10 +1,7 @@
 package org.koreait.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.koreait.constants.UserType;
@@ -46,5 +43,6 @@ public class Users extends BaseEntity {
 
     @OneToOne
     @JoinColumn(name="profile_id")
+    @ToString.Exclude
     private UserProfile profile;
 }

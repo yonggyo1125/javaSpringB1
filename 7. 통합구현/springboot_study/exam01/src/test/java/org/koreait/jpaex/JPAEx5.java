@@ -84,6 +84,15 @@ public class JPAEx5 {
 
     @Test
     void test3() {
+        Users user = usersRepository.findByUserId("user01");
+        UserProfile profile = user.getProfile();
+        System.out.println(profile);
+    }
 
+    @Test
+    void test4() {
+        UserProfile profile = userProfileRepository.findById(1L).orElse(null);
+        Users user = profile.getUser();
+        System.out.println(user);
     }
 }
