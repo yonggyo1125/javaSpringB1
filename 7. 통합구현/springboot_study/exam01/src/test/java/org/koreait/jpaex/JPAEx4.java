@@ -7,6 +7,8 @@ import org.koreait.entities.Users;
 import org.koreait.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -53,7 +55,8 @@ public class JPAEx4 {
 
     @Test
     void test3() {
-        List<Users> items = usersRepository.findByUserNmContainingOrderByRegDtDesc("사용자");
+        Pageable pageable = PageRequest.of(1, 3);
+        List<Users> items = usersRepository.findByUserNmContainingOrderByRegDtDesc("사용자", pageable);
         items.stream().forEach(System.out::println);
     }
 
@@ -62,4 +65,18 @@ public class JPAEx4 {
         List<Users> items = usersRepository.getUsers1("사용자");
         items.stream().forEach(System.out::println);
     }
+
+    @Test
+    void test5() {
+        List<Users> items = usersRepository.getUsers2("사용자");
+        items.stream().forEach(System.out::println);
+    }
+
+    @Test
+    void test6() {
+        List<Users> items = usersRepository.getUsers3("사용자");
+        items.stream().forEach(System.out::println);
+    }
+
+
 }

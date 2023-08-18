@@ -24,4 +24,8 @@ public class BoardData extends BaseEntity {
     private String content;
 
     private long hit;
+
+    @ManyToOne
+    @JoinColumn(name="user_no")
+    private Users user;
 }
