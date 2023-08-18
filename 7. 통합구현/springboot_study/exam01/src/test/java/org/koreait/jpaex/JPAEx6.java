@@ -1,5 +1,6 @@
 package org.koreait.jpaex;
 
+import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.koreait.entities.BoardData;
@@ -24,6 +25,9 @@ public class JPAEx6 {
     @Autowired
     private HashTagRepository hashTagRepository;
 
+    @Autowired
+    private EntityManager em;
+
     @BeforeEach
     void init() {
         List<HashTag> tags = new ArrayList<>();
@@ -47,10 +51,20 @@ public class JPAEx6 {
         }
 
         boardDataRepository.saveAllAndFlush(items);
+        em.clear();
     }
 
     @Test
     void test1() {
+        BoardData data = boardDataRepository.findById(1L).orElse(null);
+        List<HashTag> tags = data.getTags();
+        tags.stream().forEach(System.out::println);
+    }
 
+    @Test
+    void test2() {
+        HashTag tag = hashTagRepository.findById(1L).orElse(null);
+        List<BoardData> items = tag.getBoardDatas();
+        items.stream().forEach(System.out::println);
     }
 }

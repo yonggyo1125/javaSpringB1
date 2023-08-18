@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,5 +20,6 @@ public class HashTag {
     private String tag;
 
     @ManyToMany(mappedBy = "tags")
+    @ToString.Exclude
     private List<BoardData> boardDatas = new ArrayList<>();
 }

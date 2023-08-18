@@ -31,5 +31,6 @@ public class BoardData extends BaseEntity {
     private Users user;
 
     @ManyToMany
+    @ToString.Exclude
     private List<HashTag> tags = new ArrayList<>();
 }
