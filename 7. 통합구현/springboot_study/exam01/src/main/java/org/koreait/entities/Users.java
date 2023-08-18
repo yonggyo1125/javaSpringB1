@@ -10,6 +10,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.koreait.constants.UserType;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data @Builder
@@ -38,4 +40,11 @@ public class Users extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(length=10, nullable = false)
     private UserType type = UserType.USER;
+
+    @OneToMany(mappedBy = "user")
+    private List<BoardData> boardDatas = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name="profile_id")
+    private UserProfile profile;
 }
