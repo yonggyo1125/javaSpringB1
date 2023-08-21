@@ -20,6 +20,7 @@ public class CommonRestController {
         }
 
         JSONData<Object> data = JSONData
+
                 .builder()
                 .success(false)
                 .message(e.getMessage())
