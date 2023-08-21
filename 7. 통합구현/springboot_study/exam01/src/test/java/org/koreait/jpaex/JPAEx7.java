@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.koreait.constants.UserType;
 import org.koreait.entities.BoardData;
 import org.koreait.entities.Users;
+import org.koreait.models.board.BoardListService;
 import org.koreait.repositories.BoardDataRepository;
 import org.koreait.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class JPAEx7 {
 
     @Autowired
     private UsersRepository usersRepository;
+
+    @Autowired
+    private BoardListService listService;
 
     @Autowired
     private EntityManager em;
@@ -82,5 +86,17 @@ public class JPAEx7 {
              String userId = user.getUserId();  // 10번 쿼리
              System.out.println("userId : " + userId);
          }
+     }
+
+     @Test
+     void test4() {
+         List<BoardData> items = listService.getList();
+     }
+
+     @Test
+     void test5() {
+        Users user = usersRepository.findByUserId("user01");
+        usersRepository.delete(user);
+        usersRepository.flush();
      }
 }
