@@ -44,5 +44,7 @@ public class BoardSaveService {
         }
 
         repository.saveAndFlush(boardData);
+
+        boardForm.setId(boardData.getId());
     }
 }
