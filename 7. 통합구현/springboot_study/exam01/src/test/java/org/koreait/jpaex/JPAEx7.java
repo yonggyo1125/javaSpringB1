@@ -1,6 +1,8 @@
 package org.koreait.jpaex;
 
+import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.koreait.constants.UserType;
 import org.koreait.entities.BoardData;
 import org.koreait.entities.Users;
@@ -25,6 +27,9 @@ public class JPAEx7 {
     @Autowired
     private UsersRepository usersRepository;
 
+    @Autowired
+    private EntityManager em;
+
     @BeforeEach
     void init() {
         Users user = Users
@@ -48,5 +53,34 @@ public class JPAEx7 {
         }
 
         boardDataRepository.saveAllAndFlush(items);
+        em.clear();
+     }
+
+     @Test
+     void test1() {
+        BoardData data = boardDataRepository.findById(1L).orElse(null);
+        Users user = data.getUser();
+        String userId = user.getUserId();
+        System.out.println("userId : " + userId);
+     }
+
+     @Test
+     void test2() {
+        List<BoardData> items = boardDataRepository.findAll(); // 1번 쿼리
+         for (BoardData item : items) {
+             Users user = item.getUser();
+             String userId = user.getUserId();  // 10번 쿼리
+             System.out.println("userId : " + userId);
+         }
+     }
+
+     @Test
+     void test3() {
+        List<BoardData> items = boardDataRepository.getList();
+         for (BoardData item : items) {
+             Users user = item.getUser();
+             String userId = user.getUserId();  // 10번 쿼리
+             System.out.println("userId : " + userId);
+         }
      }
 }
