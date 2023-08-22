@@ -10,7 +10,7 @@ import org.koreait.constants.UserType;
 @Entity
 @Data @Builder
 @AllArgsConstructor @NonNull
-public class Users {
+public class Users extends BaseEntity {
     @Id @GeneratedValue
     private Long userNo;
 
