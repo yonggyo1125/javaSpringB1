@@ -1,15 +1,12 @@
 package org.koreait.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 import org.koreait.constants.UserType;
 
 @Entity
 @Data @Builder
-@AllArgsConstructor @NonNull
+@AllArgsConstructor @NoArgsConstructor
 public class Users extends BaseEntity {
     @Id @GeneratedValue
     private Long userNo;
