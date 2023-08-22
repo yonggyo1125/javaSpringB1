@@ -1,5 +1,7 @@
 package org.koreait.configs;
 
+import org.koreait.models.member.LoginFailureHandler;
+import org.koreait.models.member.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,10 +17,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.formLogin(f -> {
                             f.loginPage("/member/login")
-                            .usernameParameter("userId")
-                            .passwordParameter("userPw")
-                            .successForwardUrl("/") // 성공시 이동할 URL
-                            .failureForwardUrl("/member/login?success=false"); // 실패시 이동할 URL
+                                    .usernameParameter("userId")
+                                    .passwordParameter("userPw")
+                                    .successHandler(new LoginSuccessHandler())
+                                    .failureHandler(new LoginFailureHandler());
+                            //.successForwardUrl("/") // 성공시 이동할 URL
+                            //.failureForwardUrl("/member/login?success=false"); // 실패시 이동할 URL
         });
 
         http.logout(f -> {
