@@ -14,6 +14,11 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
         HttpSession session = request.getSession();
+        session.removeAttribute("requiredUserId");
+        session.removeAttribute("requiredUserPw");
+        session.removeAttribute("loginFail");
+        session.removeAttribute("userId");
+
         String userId = request.getParameter("userId");
         String userPw = request.getParameter("userPw");
 

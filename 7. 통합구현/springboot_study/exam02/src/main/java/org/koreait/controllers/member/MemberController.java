@@ -2,14 +2,17 @@ package org.koreait.controllers.member;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.koreait.models.member.MemberInfo;
 import org.koreait.models.member.MemberSaveService;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
+@Slf4j
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -38,5 +41,17 @@ public class MemberController {
     public String login() {
 
         return "member/login";
+    }
+
+    @ResponseBody
+    @GetMapping("/info")
+    /*
+    public void info(Principal principal) {
+        String userId = principal.getName();
+        log.info(userId);
+    }
+     */
+    public void info(@AuthenticationPrincipal MemberInfo memberInfo) {
+        log.info(memberInfo.toString());
     }
 }
