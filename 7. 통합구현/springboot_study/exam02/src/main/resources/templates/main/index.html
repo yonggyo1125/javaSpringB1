@@ -7,7 +7,7 @@
             <a th:href="@{/member/login}">로그인</a>
         </th:block>
         <th:block sec:authorize="isAuthenticated()"> <!-- 로그인 상태 -->
-            [[${session.memberInfo.userNm}}]]([[${session.memberInfo.userId}]])님 로그인...
+            [[${session.memberInfo.userNm}]]([[${session.memberInfo.userId}]])님 로그인...
             <a th:href="@{/member/logout}">로그아웃</a>
         </th:block>
     </body>
