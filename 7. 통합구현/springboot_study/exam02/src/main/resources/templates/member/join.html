@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <h1>회원가입</h1>
+        <form method="POST" th:action="@{/member/join}" th:object="${joinForm}">
+            <dl>
+                <dt>아이디</dt>
+                <dd>
+                    <input type="text" name="userId" th:field="*{userId}">
+                    <div th:each="err : ${#fields.errors('userId')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+        </form>
+    </body>
+</html>
