@@ -19,6 +19,10 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         session.removeAttribute("loginFail");
         session.removeAttribute("userId");
 
+        /** 편의 회원 정보 처리 */
+        MemberInfo memberInfo = (MemberInfo)authentication.getPrincipal();
+        session.setAttribute("memberInfo", memberInfo);
+
         response.sendRedirect(request.getContextPath() + "/");
     }
 }

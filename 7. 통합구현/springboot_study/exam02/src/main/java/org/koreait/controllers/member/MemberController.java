@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.koreait.models.member.MemberInfo;
 import org.koreait.models.member.MemberSaveService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -51,7 +52,17 @@ public class MemberController {
         log.info(userId);
     }
      */
+    /*
     public void info(@AuthenticationPrincipal MemberInfo memberInfo) {
+        log.info(memberInfo.toString());
+    }
+     */
+    public void info() {
+        Object obj = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        // 미로그인 상태 - String : anonymousUser
+        // 로그인 상태 UserDetails 구현 객체
+        MemberInfo memberInfo = (MemberInfo)obj;
         log.info(memberInfo.toString());
     }
 }
